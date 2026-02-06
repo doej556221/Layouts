@@ -1,0 +1,2 @@
+#define LAYOUTS_API __declspec(dllexport)
+#define LAYOUTS_API __declspec(dllimport)
