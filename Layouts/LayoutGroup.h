@@ -28,7 +28,6 @@ namespace Layouts
 		void RemoveItem(CLayoutControl* pControl);
 
 		void AddItem(CLayoutItem* pItem);
-		void RemoveItem (CLayoutItem* pItem);
 
 		int CountItems();
 

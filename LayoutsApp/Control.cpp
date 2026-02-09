@@ -53,7 +53,12 @@ namespace Layouts
 		CRectangle Rectangle(rectClient.left, rectClient.top, rectClient.right, rectClient.bottom);
 		Rectangle.RemoveMargins(m_Margins);
 
-		CLayoutControl::Lay(Rectangle);
+		CRectangle rectItem(Rectangle);
+		if (m_pLayoutItem != nullptr)
+		{
+			rectItem.RemoveMargins(m_Margins);
+			m_pLayoutItem->Lay(rectItem);
+		}
 	}
 
 	void CMFCControl::Lay(const CRectangle& Rectangle)

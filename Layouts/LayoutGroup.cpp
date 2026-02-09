@@ -54,15 +54,6 @@ namespace Layouts
 		m_arrItems.push_back(pLayoutControl);
 	}
 
-	void CLayoutGroup::RemoveItem(CLayoutItem* pItem)
-	{
-		for (auto iItem = m_arrItems.begin(); iItem != m_arrItems.end(); iItem++)
-		{
-			if ((*iItem)->Layout() == pItem)
-				m_arrItems.remove(*(iItem++));
-		}
-	}
-
 	int CLayoutGroup::CountItems()
 	{
 		return m_arrItems.size();
@@ -83,6 +74,7 @@ namespace Layouts
 			
 			int iFixedWidth = 0;
 			int iFixedCount = 0;
+			int iFixedPortion = 0;
 
 			int iStretchedWidth = 0;
 			int iStretchedCount = 0;
@@ -103,6 +95,9 @@ namespace Layouts
 					iStretchedCount++;
 				}
 			}
+
+			// if (iFixedCount > 0)
+			// iFixedPortion
 
 			if (iStretchedCount > 0)
 				iStretchedPortion = (rectLayout.Width() - iFixedWidth - iSpacing * (m_arrItems.size() - 1)) / iStretchedCount;

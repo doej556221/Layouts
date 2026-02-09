@@ -37,6 +37,7 @@ namespace Layouts
 	CLayoutControl::~CLayoutControl()
 	{
 		delete m_pLayoutItem;
+		m_pLayoutItem = 0;
 	}
 
 	LayoutPolicy CLayoutControl::HorizontalPolicy()

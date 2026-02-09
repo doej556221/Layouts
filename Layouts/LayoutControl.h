@@ -10,7 +10,7 @@
 
 namespace Layouts
 {
-	class LAYOUTS_API CLayoutControl : public CLayoutItem
+	class LAYOUTS_API CLayoutControl
 	{
 	public:
 		CLayoutControl();
@@ -21,8 +21,8 @@ namespace Layouts
 		LayoutPolicy VerticalPolicy();
 		void SetPolicy(LayoutPolicy eHorizontalPolicy, LayoutPolicy eVerticalPolicy);
 
-		void Lay(const CRectangle& Rectangle) override;
-		CSize GetMinimal() override;
+		virtual void Lay(const CRectangle& Rectangle);
+		virtual CSize GetMinimal();
 		
 		CLayoutItem* Layout() const;
 		void SetLayout(CLayoutItem* pLayoutItem);
