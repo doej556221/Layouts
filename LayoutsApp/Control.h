@@ -25,7 +25,7 @@ namespace Layouts
 
 	protected:
 		CWnd* m_pWnd;
-		Layouts::CSize m_MinimalSize;
+		Layouts::CSize m_FixedSize;
 
 		WNDPROC m_pOriginalProcedure;
 		static LRESULT CALLBACK HookProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);

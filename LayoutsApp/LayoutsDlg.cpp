@@ -147,6 +147,17 @@ BOOL CLayoutsDlg::OnInitDialog()
 	groupEmail->AddItem(itemEmailEdit);
 	groupContacts->AddItem(groupEmail);
 
+	// Comment Fields
+
+	Layouts::CLayoutGroup* groupComment = new Layouts::CLayoutGroup(Layouts::Vertical);
+	Layouts::CMFCControl* itemCommentLabel = new Layouts::CMFCControl(GetDlgItem(IDC_STATIC6), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CMFCControl* itemCommentEdit = new Layouts::CMFCControl(GetDlgItem(IDC_EDIT6), Layouts::Stretched, Layouts::Stretched);
+	// groupComment->AddItem(itemCommentLabel);
+	// groupComment->AddItem(itemCommentEdit);
+	// groupForm->AddItem(groupComment);
+	groupForm->AddItem(itemCommentLabel);
+	groupForm->AddItem(itemCommentEdit);
+
 	// Control Buttons
 
 	Layouts::CLayoutGroup* groupControls = new Layouts::CLayoutGroup(Layouts::Horizontal);
@@ -167,8 +178,8 @@ BOOL CLayoutsDlg::OnInitDialog()
 
 	Layouts::CLayoutGroup* groupDialog = new Layouts::CLayoutGroup(Layouts::Horizontal);
 
-	Layouts::CMFCControl* itemOk = new Layouts::CMFCControl(GetDlgItem(IDOK), Layouts::Preferred, Layouts::Fixed);
-	Layouts::CMFCControl* itemCancel = new Layouts::CMFCControl(GetDlgItem(IDCANCEL), Layouts::Preferred, Layouts::Fixed);
+	Layouts::CMFCControl* itemOk = new Layouts::CMFCControl(GetDlgItem(IDOK), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CMFCControl* itemCancel = new Layouts::CMFCControl(GetDlgItem(IDCANCEL), Layouts::Fixed, Layouts::Fixed);
 
 	groupDialog->AddItem(itemOk);
 	groupDialog->AddItem(itemCancel);

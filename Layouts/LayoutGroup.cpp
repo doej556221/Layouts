@@ -66,19 +66,28 @@ namespace Layouts
 		
 		CRectangle rectLayout(Rectangle);
 
+		struct CCalculation
+		{
+			int m_iWidth;
+			int m_iHeight;
+			int m_iCount;
+			int m_iPortion;
+
+			CCalculation()
+			{
+				m_iWidth = 0;
+				m_iHeight = 0;
+				m_iCount = 0;
+				m_iPortion = 0;
+			}
+		} 
+		calcFixed, calcPreferred, calcStretched;
+
 		if (m_eOrientation == Horizontal)
 		{
 			int iPosition = rectLayout.Left();
 			int iSpacing = m_iSpacing * (m_arrItems.size() - 1);
-			int iPortion = (rectLayout.Width() - iSpacing) / (m_arrItems.size() - 1);
-			
-			int iFixedWidth = 0;
-			int iFixedCount = 0;
-			int iFixedPortion = 0;
-
-			int iStretchedWidth = 0;
-			int iStretchedCount = 0;
-			int iStretchedPortion = 0;
+			int iPortion = (rectLayout.Width() - iSpacing) / (m_arrItems.size() - 1);	
 
 			for (auto pItem : m_arrItems)
 			{
@@ -86,32 +95,50 @@ namespace Layouts
 
 				if (pItem->HorizontalPolicy() == Fixed)
 				{
-					iFixedWidth += sizeMinimal.Width();
-					iFixedCount++;
+					calcFixed.m_iWidth += sizeMinimal.Width();
+					calcFixed.m_iCount++;
 				}
 				else if (pItem->HorizontalPolicy() == Stretched)
 				{
-					iStretchedWidth = sizeMinimal.Width();
-					iStretchedCount++;
+					calcStretched.m_iWidth += sizeMinimal.Width();
+					calcStretched.m_iCount++;
+				}
+
+				if (pItem->VerticalPolicy() == Fixed)
+				{
+					if (calcFixed.m_iHeight < sizeMinimal.Width())
+						calcFixed.m_iHeight = sizeMinimal.Width();
+				}
+				else if (pItem->VerticalPolicy() == Preferred)
+				{
+					if (calcPreferred.m_iHeight < sizeMinimal.Width())
+						calcPreferred.m_iHeight = sizeMinimal.Width();
+				}
+				else if (pItem->VerticalPolicy() == Stretched)
+				{
+					if (calcStretched.m_iHeight < sizeMinimal.Width())
+						calcStretched.m_iHeight = sizeMinimal.Width();
 				}
 			}
 
-			// if (iFixedCount > 0)
-			// iFixedPortion
+			if (calcStretched.m_iCount > 0)
+				calcStretched.m_iPortion = (rectLayout.Width() - calcPreferred.m_iWidth - calcFixed.m_iWidth - m_iSpacing * (m_arrItems.size() - 1)) / calcStretched.m_iCount;
 
-			if (iStretchedCount > 0)
-				iStretchedPortion = (rectLayout.Width() - iFixedWidth - iSpacing * (m_arrItems.size() - 1)) / iStretchedCount;
+			// if (calcPreferred.m_iCount > 0)
+			// calcPreferred.m_iPortion
+
+			// if (calcFixed.m_iCount > 0)
+			// calcFixed.m_iPortion
 
 			for (auto pItem : m_arrItems)
 			{
 				CSize sizeMinimal = pItem->GetMinimal();
 
 				CRectangle rectItem;
-				// rectItem.SetRectangle(iPosition, rectLayout.Top(), iPosition + iPortion, rectLayout.Bottom());
 				rectItem.SetRectangle(iPosition, rectLayout.Top(), iPosition + sizeMinimal.Width(), rectLayout.Bottom());
 
 				if (pItem->HorizontalPolicy() == Stretched)
-					rectItem.SetRight(rectItem.Left() + iStretchedPortion);
+					rectItem.SetRight(rectItem.Left() + calcStretched.m_iPortion);
 
 				pItem->Lay(rectItem);
 
@@ -121,7 +148,6 @@ namespace Layouts
 		else if (m_eOrientation == Vertical)
 		{
 			int iPosition = rectLayout.Top();
-
 			int iSpacing = m_iSpacing * (m_arrItems.size() - 1);
 			int iPortion = (rectLayout.Height() - iSpacing) / m_arrItems.size();
 
@@ -129,9 +155,57 @@ namespace Layouts
 			{
 				CSize sizeMinimal = pItem->GetMinimal();
 
+				if (pItem->HorizontalPolicy() == Fixed)
+				{
+					if (calcFixed.m_iWidth < sizeMinimal.Width())
+						calcFixed.m_iWidth = sizeMinimal.Width();
+				}
+				else if (pItem->HorizontalPolicy() == Preferred)
+				{
+					if (calcPreferred.m_iWidth < sizeMinimal.Width())
+						calcPreferred.m_iWidth = sizeMinimal.Width();
+				}
+				else if (pItem->HorizontalPolicy() == Stretched)
+				{
+					if (calcStretched.m_iWidth < sizeMinimal.Width())
+						calcStretched.m_iWidth = sizeMinimal.Width();
+				}
+
+				if (pItem->VerticalPolicy() == Fixed)
+				{
+					calcFixed.m_iHeight += sizeMinimal.Height();
+					calcFixed.m_iCount++;
+				}
+				else if (pItem->VerticalPolicy() == Preferred)
+				{
+					calcPreferred.m_iHeight += sizeMinimal.Height();
+					calcPreferred.m_iCount++;
+				}
+				else if (pItem->VerticalPolicy() == Stretched)
+				{
+					calcStretched.m_iHeight += sizeMinimal.Height();
+					calcStretched.m_iCount++;
+				}
+			}
+
+			if (calcStretched.m_iCount > 0)
+				calcStretched.m_iPortion = (rectLayout.Height() - calcFixed.m_iHeight - calcPreferred.m_iHeight - m_iSpacing * (m_arrItems.size() - 1)) / calcStretched.m_iCount;
+
+			// if (calcPreferred.m_iCount > 0)
+			// calcPreferred.m_iPortion
+
+			// if (calcFixed.m_iCount > 0)
+			// calcFixed.m_iPortion
+
+			for (auto pItem : m_arrItems)
+			{
+				CSize sizeMinimal = pItem->GetMinimal();
+
 				CRectangle rectItem;
-				// rectItem.SetRectangle(rectLayout.Left(), iPosition, rectLayout.Right(), iPosition + iPortion);
 				rectItem.SetRectangle(rectLayout.Left(), iPosition, rectLayout.Right(), iPosition + sizeMinimal.Height());
+
+				if (pItem->VerticalPolicy() == Stretched)
+					rectItem.SetBottom(rectItem.Top() + calcStretched.m_iPortion);
 
 				pItem->Lay(rectItem);
 

@@ -20,7 +20,7 @@ namespace Layouts
 		CRect rectControl;
 		m_pWnd->GetWindowRect(&rectControl);
 
-		m_MinimalSize.SetSize(rectControl.Width(), rectControl.Height());
+		m_FixedSize.SetSize(rectControl.Width(), rectControl.Height());
 		m_pOriginalProcedure = 0;
 	}
 
@@ -32,7 +32,7 @@ namespace Layouts
 		CRect rectControl;
 		m_pWnd->GetWindowRect(&rectControl);
 
-		m_MinimalSize.SetSize(rectControl.Width(), rectControl.Height());
+		m_FixedSize.SetSize(rectControl.Width(), rectControl.Height());
 		m_pOriginalProcedure = 0;
 	}
 
@@ -66,10 +66,10 @@ namespace Layouts
 		CRect rectControl(Rectangle.Left(), Rectangle.Top(), Rectangle.Right(), Rectangle.Bottom());
 
 		if (m_eHorizontalPolicy == Layouts::Fixed)
-			rectControl.right = rectControl.left + m_MinimalSize.Width();
+			rectControl.right = rectControl.left + m_FixedSize.Width();
 
 		if (m_eVerticalPolicy == Layouts::Fixed)
-			rectControl.bottom = rectControl.top + m_MinimalSize.Height();
+			rectControl.bottom = rectControl.top + m_FixedSize.Height();
 
 		m_pWnd->SetWindowPos(NULL, rectControl.left, rectControl.top, rectControl.Width(), rectControl.Height(), SWP_NOZORDER);
 
@@ -86,13 +86,14 @@ namespace Layouts
 
 	CSize CMFCControl::GetMinimal()
 	{
-		CSize sizeControl = CLayoutControl::GetMinimal();	
+		CSize sizeControl = m_FixedSize;
+		CSize sizeMinimal = CLayoutControl::GetMinimal();	
 		
-		if (sizeControl.Width() < m_MinimalSize.Width()) 
-			sizeControl.SetWidth(m_MinimalSize.Width());
+		if (m_FixedSize.Width() < sizeMinimal.Width())
+			sizeControl.SetWidth(sizeMinimal.Width());
 		
-		if (sizeControl.Height() < m_MinimalSize.Height()) 
-			sizeControl.SetHeight(m_MinimalSize.Height());
+		if (m_FixedSize.Height() < sizeMinimal.Height())
+			sizeControl.SetHeight(sizeMinimal.Height());
 
 		return sizeControl;
 	}

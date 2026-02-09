@@ -17,6 +17,8 @@
 #define IDC_STATIC1                     1006
 #define IDC_STATIC2                     1007
 #define IDC_STATIC3                     1008
+#define IDC_EDIT6                       1009
+#define IDC_STATIC6                     1010
 #define IDC_STATIC4                     1012
 #define IDC_EDIT3                       1013
 #define IDC_EDIT5                       1013
@@ -29,7 +31,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        130
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1009
+#define _APS_NEXT_CONTROL_VALUE         1011
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
