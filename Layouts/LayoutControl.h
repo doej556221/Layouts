@@ -7,22 +7,23 @@
 #include "LayoutItem.h"
 #include "LayoutMargins.h"
 #include "LayoutRect.h"
+#include "LayoutItem.h"
 
 namespace Layouts
 {
-	class LAYOUTS_API CLayoutControl
+	class LAYOUTS_API CLayoutControl : public CLayoutItem
 	{
 	public:
 		CLayoutControl();
 		CLayoutControl(LayoutPolicy eHorizontalPolicy, LayoutPolicy eVerticalPolicy);
 		virtual ~CLayoutControl();
 
-		LayoutPolicy HorizontalPolicy();
-		LayoutPolicy VerticalPolicy();
+		LayoutPolicy HorizontalPolicy() override;
+		LayoutPolicy VerticalPolicy() override;
 		void SetPolicy(LayoutPolicy eHorizontalPolicy, LayoutPolicy eVerticalPolicy);
 
-		virtual void Lay(const CRectangle& Rectangle);
-		virtual CSize GetMinimal();
+		void Lay(const CRectangle& Rectangle) override;
+		CSize GetMinimal() override;
 		
 		CLayoutItem* Layout() const;
 		void SetLayout(CLayoutItem* pLayoutItem);

@@ -24,12 +24,13 @@ namespace Layouts
 
 	public:
 
-		void AddItem(CLayoutControl* pControl);
-		void RemoveItem(CLayoutControl* pControl);
-
-		void AddItem(CLayoutItem* pItem);
+		void AddItem(CLayoutItem* pControl);
+		void RemoveItem(CLayoutItem* pControl);
 
 		int CountItems();
+
+		LayoutPolicy HorizontalPolicy() override;
+		LayoutPolicy VerticalPolicy() override;
 
 		void Lay(const CRectangle& Rectangle) override;
 		CSize GetMinimal() override;
@@ -39,7 +40,7 @@ namespace Layouts
 	protected:
 		Orientation m_eOrientation;
 
-		std::list<CLayoutControl*> m_arrItems;
+		std::list<CLayoutItem*> m_arrItems;
 	};
 
 }

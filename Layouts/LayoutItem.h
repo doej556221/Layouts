@@ -17,6 +17,9 @@ namespace Layouts
 		CLayoutItem();
 		virtual ~CLayoutItem();
 
+		virtual LayoutPolicy HorizontalPolicy();
+		virtual LayoutPolicy VerticalPolicy();
+
 		virtual void Lay(const CRectangle& Rectangle);
 		virtual CSize GetMinimal();
 

@@ -35,28 +35,49 @@ namespace Layouts
 		m_arrItems.clear();
 	}
 
-	void CLayoutGroup::AddItem(CLayoutControl* pControl)
-	{
-		m_arrItems.push_back(pControl);
-	}
-
-	void CLayoutGroup::RemoveItem(CLayoutControl* pControl)
-	{
-		m_arrItems.remove(pControl);
-	}
-
 	void CLayoutGroup::AddItem(CLayoutItem* pItem)
 	{
-		CLayoutControl* pLayoutControl = new CLayoutControl();
-		pLayoutControl->SetPolicy(Preferred, Preferred);
-		pLayoutControl->SetLayout(pItem);
+		m_arrItems.push_back(pItem);
+	}
 
-		m_arrItems.push_back(pLayoutControl);
+	void CLayoutGroup::RemoveItem(CLayoutItem* pItem)
+	{
+		m_arrItems.remove(pItem);
 	}
 
 	int CLayoutGroup::CountItems()
 	{
 		return m_arrItems.size();
+	}
+
+	LayoutPolicy CLayoutGroup::HorizontalPolicy()
+	{
+		LayoutPolicy GeneralHorizontalPolicy = Layouts::Fixed;
+
+		for (auto pItem : m_arrItems)
+		{
+			LayoutPolicy ItemHorizontalPolicy = pItem->HorizontalPolicy();
+
+			if (ItemHorizontalPolicy > GeneralHorizontalPolicy)
+				GeneralHorizontalPolicy = ItemHorizontalPolicy;
+		}
+
+		return GeneralHorizontalPolicy;
+	}
+
+	LayoutPolicy CLayoutGroup::VerticalPolicy()
+	{
+		LayoutPolicy GeneralVerticalPolicy = Layouts::Fixed;
+
+		for (auto pItem : m_arrItems)
+		{
+			LayoutPolicy ItemVerticalPolicy = pItem->VerticalPolicy();
+
+			if (ItemVerticalPolicy > GeneralVerticalPolicy)
+				GeneralVerticalPolicy = ItemVerticalPolicy;
+		}
+
+		return GeneralVerticalPolicy;
 	}
 
 	void CLayoutGroup::Lay(const CRectangle& Rectangle)

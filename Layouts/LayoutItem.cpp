@@ -23,6 +23,16 @@ namespace Layouts
 
 	}
 
+	LayoutPolicy CLayoutItem::HorizontalPolicy()
+	{
+		return Layouts::Preferred;
+	}
+
+	LayoutPolicy CLayoutItem::VerticalPolicy()
+	{
+		return Layouts::Preferred;
+	}
+
 	void CLayoutItem::Lay(const CRectangle& Rectangle)
 	{
 
