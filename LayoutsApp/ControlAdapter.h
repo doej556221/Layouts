@@ -10,12 +10,12 @@ namespace Layouts
 	class CRectangle;
 	class CMargins;
 
-	class CMFCControl : public CLayoutControl
+	class CControlAdapter : public CLayoutControl
 	{
 	public:
-		CMFCControl(CWnd* pWnd);
-		CMFCControl(CWnd* pWnd, LayoutPolicy eHorizontal, LayoutPolicy eVertical);
-		virtual ~CMFCControl();
+		CControlAdapter(CWnd* pWnd);
+		CControlAdapter(CWnd* pWnd, LayoutPolicy eHorizontal, LayoutPolicy eVertical);
+		virtual ~CControlAdapter();
 
 		void Lay();
 		void Lay(const CRectangle& Rectangle) override;
@@ -29,7 +29,7 @@ namespace Layouts
 
 		WNDPROC m_pOriginalProcedure;
 		static LRESULT CALLBACK HookProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
-		static CMap<HWND, HWND, CMFCControl*, CMFCControl*> m_mapProcedures;
+		static CMap<HWND, HWND, CControlAdapter*, CControlAdapter*> m_mapProcedures;
 	};
 
 }

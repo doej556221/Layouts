@@ -192,7 +192,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Control.h" />
+    <ClInclude Include="ControlAdapter.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="LayoutsApp.h" />
     <ClInclude Include="LayoutsDlg.h" />
@@ -201,7 +201,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Control.cpp" />
+    <ClCompile Include="ControlAdapter.cpp" />
     <ClCompile Include="LayoutsApp.cpp" />
     <ClCompile Include="LayoutsDlg.cpp" />
     <ClCompile Include="pch.cpp">

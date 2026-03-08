@@ -14,7 +14,7 @@
 
 #include "LayoutControl.h"
 #include "LayoutGroup.h"
-#include "Control.h"
+#include "ControlAdapter.h"
 
 // CAboutDlg dialog used for App About
 
@@ -102,7 +102,7 @@ BOOL CLayoutsDlg::OnInitDialog()
 
 	// Add extra initialization here
 	
-	Layouts::CMFCControl* itemForm = new Layouts::CMFCControl(this, Layouts::Preferred, Layouts::Preferred);
+	Layouts::CControlAdapter* itemForm = new Layouts::CControlAdapter(this, Layouts::Preferred, Layouts::Preferred);
 	itemForm->SetMargins(5);
 	
 	Layouts::CLayoutGroup* groupForm = new Layouts::CLayoutGroup(Layouts::Vertical);
@@ -111,22 +111,22 @@ BOOL CLayoutsDlg::OnInitDialog()
 	// Name Fields
 
 	Layouts::CLayoutGroup* groupFirstName = new Layouts::CLayoutGroup(Layouts::Horizontal);
-	Layouts::CMFCControl* itemFirstNameLabel = new Layouts::CMFCControl(GetDlgItem(IDC_STATIC1), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemFirstNameEdit = new Layouts::CMFCControl(GetDlgItem(IDC_EDIT1), Layouts::Stretched, Layouts::Fixed);
+	Layouts::CControlAdapter* itemFirstNameLabel = new Layouts::CControlAdapter(GetDlgItem(IDC_STATIC1), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemFirstNameEdit = new Layouts::CControlAdapter(GetDlgItem(IDC_EDIT1), Layouts::Stretched, Layouts::Fixed);
 	groupFirstName->AddItem(itemFirstNameLabel);
 	groupFirstName->AddItem(itemFirstNameEdit);
 	groupForm->AddItem(groupFirstName);
 
 	Layouts::CLayoutGroup* groupLastName = new Layouts::CLayoutGroup(Layouts::Horizontal);
-	Layouts::CMFCControl* itemLastNameLabel = new Layouts::CMFCControl(GetDlgItem(IDC_STATIC2), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemLastNameEdit = new Layouts::CMFCControl(GetDlgItem(IDC_EDIT2), Layouts::Stretched, Layouts::Fixed);
+	Layouts::CControlAdapter* itemLastNameLabel = new Layouts::CControlAdapter(GetDlgItem(IDC_STATIC2), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemLastNameEdit = new Layouts::CControlAdapter(GetDlgItem(IDC_EDIT2), Layouts::Stretched, Layouts::Fixed);
 	groupLastName->AddItem(itemLastNameLabel);
 	groupLastName->AddItem(itemLastNameEdit);
 	groupForm->AddItem(groupLastName);
 
 	// Contact Fields
 
-	Layouts::CMFCControl* itemContacts = new Layouts::CMFCControl(GetDlgItem(IDC_STATIC3), Layouts::Preferred, Layouts::Preferred);
+	Layouts::CControlAdapter* itemContacts = new Layouts::CControlAdapter(GetDlgItem(IDC_STATIC3), Layouts::Preferred, Layouts::Preferred);
 	itemContacts->SetMargins(10, 20, 10, 10);
 	groupForm->AddItem(itemContacts);
 
@@ -134,15 +134,15 @@ BOOL CLayoutsDlg::OnInitDialog()
 	itemContacts->SetLayout(groupContacts);
 
 	Layouts::CLayoutGroup* groupPhone = new Layouts::CLayoutGroup(Layouts::Horizontal);
-	Layouts::CMFCControl* itemPhoneLabel = new Layouts::CMFCControl(GetDlgItem(IDC_STATIC4), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemPhoneEdit = new Layouts::CMFCControl(GetDlgItem(IDC_EDIT4), Layouts::Stretched, Layouts::Fixed);
+	Layouts::CControlAdapter* itemPhoneLabel = new Layouts::CControlAdapter(GetDlgItem(IDC_STATIC4), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemPhoneEdit = new Layouts::CControlAdapter(GetDlgItem(IDC_EDIT4), Layouts::Stretched, Layouts::Fixed);
 	groupPhone->AddItem(itemPhoneLabel);
 	groupPhone->AddItem(itemPhoneEdit);
 	groupContacts->AddItem(groupPhone);
 
 	Layouts::CLayoutGroup* groupEmail = new Layouts::CLayoutGroup(Layouts::Horizontal);
-	Layouts::CMFCControl* itemEmailLabel = new Layouts::CMFCControl(GetDlgItem(IDC_STATIC5), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemEmailEdit = new Layouts::CMFCControl(GetDlgItem(IDC_EDIT5), Layouts::Stretched, Layouts::Fixed);
+	Layouts::CControlAdapter* itemEmailLabel = new Layouts::CControlAdapter(GetDlgItem(IDC_STATIC5), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemEmailEdit = new Layouts::CControlAdapter(GetDlgItem(IDC_EDIT5), Layouts::Stretched, Layouts::Fixed);
 	groupEmail->AddItem(itemEmailLabel);
 	groupEmail->AddItem(itemEmailEdit);
 	groupContacts->AddItem(groupEmail);
@@ -150,8 +150,8 @@ BOOL CLayoutsDlg::OnInitDialog()
 	// Comment Fields
 
 	Layouts::CLayoutGroup* groupComment = new Layouts::CLayoutGroup(Layouts::Vertical);
-	Layouts::CMFCControl* itemCommentLabel = new Layouts::CMFCControl(GetDlgItem(IDC_STATIC6), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemCommentEdit = new Layouts::CMFCControl(GetDlgItem(IDC_EDIT6), Layouts::Stretched, Layouts::Stretched);
+	Layouts::CControlAdapter* itemCommentLabel = new Layouts::CControlAdapter(GetDlgItem(IDC_STATIC6), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemCommentEdit = new Layouts::CControlAdapter(GetDlgItem(IDC_EDIT6), Layouts::Stretched, Layouts::Stretched);
 	// groupComment->AddItem(itemCommentLabel);
 	// groupComment->AddItem(itemCommentEdit);
 	// groupForm->AddItem(groupComment);
@@ -162,10 +162,10 @@ BOOL CLayoutsDlg::OnInitDialog()
 
 	Layouts::CLayoutGroup* groupControls = new Layouts::CLayoutGroup(Layouts::Horizontal);
 
-	Layouts::CMFCControl* itemSave = new Layouts::CMFCControl(GetDlgItem(IDC_BUTTON1), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemReset = new Layouts::CMFCControl(GetDlgItem(IDC_BUTTON2), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemPrint = new Layouts::CMFCControl(GetDlgItem(IDC_BUTTON3), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemSubmit = new Layouts::CMFCControl(GetDlgItem(IDC_BUTTON4), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemSave = new Layouts::CControlAdapter(GetDlgItem(IDC_BUTTON1), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemReset = new Layouts::CControlAdapter(GetDlgItem(IDC_BUTTON2), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemPrint = new Layouts::CControlAdapter(GetDlgItem(IDC_BUTTON3), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemSubmit = new Layouts::CControlAdapter(GetDlgItem(IDC_BUTTON4), Layouts::Fixed, Layouts::Fixed);
 
 	groupControls->AddItem(itemSave);
 	groupControls->AddItem(itemReset);
@@ -178,8 +178,8 @@ BOOL CLayoutsDlg::OnInitDialog()
 
 	Layouts::CLayoutGroup* groupDialog = new Layouts::CLayoutGroup(Layouts::Horizontal);
 
-	Layouts::CMFCControl* itemOk = new Layouts::CMFCControl(GetDlgItem(IDOK), Layouts::Fixed, Layouts::Fixed);
-	Layouts::CMFCControl* itemCancel = new Layouts::CMFCControl(GetDlgItem(IDCANCEL), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemOk = new Layouts::CControlAdapter(GetDlgItem(IDOK), Layouts::Fixed, Layouts::Fixed);
+	Layouts::CControlAdapter* itemCancel = new Layouts::CControlAdapter(GetDlgItem(IDCANCEL), Layouts::Fixed, Layouts::Fixed);
 
 	groupDialog->AddItem(itemOk);
 	groupDialog->AddItem(itemCancel);

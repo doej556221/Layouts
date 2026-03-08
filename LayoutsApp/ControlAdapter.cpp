@@ -4,16 +4,16 @@
 
 
 #include "pch.h"
-#include "Control.h"
+#include "ControlAdapter.h"
 
 #include "LayoutSize.h"
 #include "LayoutRect.h"
 
 namespace Layouts
 {
-	CMap<HWND, HWND, CMFCControl*, CMFCControl*> CMFCControl::m_mapProcedures;
+	CMap<HWND, HWND, CControlAdapter*, CControlAdapter*> CControlAdapter::m_mapProcedures;
 
-	CMFCControl::CMFCControl(CWnd* pWnd)
+	CControlAdapter::CControlAdapter(CWnd* pWnd)
 	{
 		m_pWnd = pWnd;
 
@@ -24,7 +24,7 @@ namespace Layouts
 		m_pOriginalProcedure = 0;
 	}
 
-	CMFCControl::CMFCControl(CWnd* pWnd, LayoutPolicy eHorizontalPolicy, LayoutPolicy eVerticalPolicy)
+	CControlAdapter::CControlAdapter(CWnd* pWnd, LayoutPolicy eHorizontalPolicy, LayoutPolicy eVerticalPolicy)
 		: CLayoutControl(eHorizontalPolicy, eVerticalPolicy)
 	{
 		m_pWnd = pWnd;
@@ -36,7 +36,7 @@ namespace Layouts
 		m_pOriginalProcedure = 0;
 	}
 
-	CMFCControl::~CMFCControl()
+	CControlAdapter::~CControlAdapter()
 	{
 		if (m_pOriginalProcedure != 0)
 		{
@@ -45,7 +45,7 @@ namespace Layouts
 		}
 	}
 
-	void CMFCControl::Lay()
+	void CControlAdapter::Lay()
 	{
 		CRect rectClient;
 		m_pWnd->GetClientRect(&rectClient);
@@ -61,7 +61,7 @@ namespace Layouts
 		}
 	}
 
-	void CMFCControl::Lay(const CRectangle& Rectangle)
+	void CControlAdapter::Lay(const CRectangle& Rectangle)
 	{
 		CRect rectControl(Rectangle.Left(), Rectangle.Top(), Rectangle.Right(), Rectangle.Bottom());
 
@@ -84,7 +84,7 @@ namespace Layouts
 		}
 	}
 
-	CSize CMFCControl::GetMinimal()
+	CSize CControlAdapter::GetMinimal()
 	{
 		CSize sizeControl = m_FixedSize;
 		CSize sizeMinimal = CLayoutControl::GetMinimal();	
@@ -98,7 +98,7 @@ namespace Layouts
 		return sizeControl;
 	}
 
-	void CMFCControl::Hook()
+	void CControlAdapter::Hook()
 	{
 		m_mapProcedures.SetAt(m_pWnd->GetSafeHwnd(), this);
 		m_pOriginalProcedure = reinterpret_cast<WNDPROC>(GetWindowLongPtr(m_pWnd->GetSafeHwnd(), GWLP_WNDPROC));
@@ -107,11 +107,11 @@ namespace Layouts
 		SetWindowLongPtr(m_pWnd->GetSafeHwnd(), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(HookProcedure));
 	}
 
-	LRESULT CALLBACK CMFCControl::HookProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+	LRESULT CALLBACK CControlAdapter::HookProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		LRESULT iResult = 0;
 
-		CMFCControl* pControl = 0;
+		CControlAdapter* pControl = 0;
 		if (m_mapProcedures.Lookup(hWnd, pControl) == TRUE)
 		{
 			if (message == WM_SIZE)
