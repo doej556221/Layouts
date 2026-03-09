@@ -5,10 +5,18 @@
 #pragma once
 
 // Exports
+#ifdef _WINDOWS
+
 #ifdef LAYOUTS_EXPORTS
 #define LAYOUTS_API __declspec(dllexport)
 #else
 #define LAYOUTS_API __declspec(dllimport)
+#endif
+
+#else
+
+#define LAYOUTS_API
+
 #endif
 
 class LAYOUTS_API CLayouts {

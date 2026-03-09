@@ -17,6 +17,8 @@ namespace Layouts
 		CControlAdapter(CWnd* pWnd, LayoutPolicy eHorizontal, LayoutPolicy eVertical);
 		virtual ~CControlAdapter();
 
+		bool IsVisible() override;
+
 		void Lay();
 		void Lay(const CRectangle& Rectangle) override;
 		CSize GetMinimal() override;

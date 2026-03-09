@@ -31,6 +31,7 @@ namespace Layouts
 
 		LayoutPolicy HorizontalPolicy() override;
 		LayoutPolicy VerticalPolicy() override;
+		bool IsVisible() override;
 
 		void Lay(const CRectangle& Rectangle) override;
 		CSize GetMinimal() override;

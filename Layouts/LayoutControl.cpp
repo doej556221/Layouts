@@ -56,6 +56,11 @@ namespace Layouts
 		m_eVerticalPolicy = eVerticalPolicy;
 	}
 
+	bool CLayoutControl::IsVisible()
+	{
+		return false;
+	}
+
 	void CLayoutControl::Lay(const CRectangle& Rectangle)
 	{
 		CRectangle rectItem(Rectangle);

@@ -19,6 +19,7 @@ namespace Layouts
 
 		virtual LayoutPolicy HorizontalPolicy();
 		virtual LayoutPolicy VerticalPolicy();
+		virtual bool IsVisible();
 
 		virtual void Lay(const CRectangle& Rectangle);
 		virtual CSize GetMinimal();

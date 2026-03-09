@@ -187,10 +187,8 @@ BOOL CLayoutsDlg::OnInitDialog()
 	groupForm->AddItem(groupDialog);
 
 	// Layout
-
-	itemForm->Lay();
 	itemForm->Hook();
-	
+	this->PostMessage(WM_SIZE, SIZE_RESTORED, 0);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }

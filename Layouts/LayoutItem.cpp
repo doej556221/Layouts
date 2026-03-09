@@ -33,6 +33,11 @@ namespace Layouts
 		return Layouts::Preferred;
 	}
 
+	bool CLayoutItem::IsVisible()
+	{
+		return false;
+	}
+
 	void CLayoutItem::Lay(const CRectangle& Rectangle)
 	{
 

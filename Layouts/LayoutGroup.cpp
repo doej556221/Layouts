@@ -80,6 +80,20 @@ namespace Layouts
 		return GeneralVerticalPolicy;
 	}
 
+	bool CLayoutGroup::IsVisible()
+	{
+		bool bGeneralVisibility = false;
+		
+		for (auto pItem : m_arrItems)
+		{
+			bool bVisible = pItem->IsVisible();
+			if (bVisible == true)
+				bGeneralVisibility = true;
+		}
+
+		return bGeneralVisibility;
+	}
+
 	void CLayoutGroup::Lay(const CRectangle& Rectangle)
 	{
 		if (m_arrItems.empty() == true)
@@ -112,6 +126,9 @@ namespace Layouts
 
 			for (auto pItem : m_arrItems)
 			{
+				if (pItem->IsVisible() == false)
+					continue;
+
 				CSize sizeMinimal = pItem->GetMinimal();
 
 				if (pItem->HorizontalPolicy() == Fixed)
@@ -153,6 +170,9 @@ namespace Layouts
 
 			for (auto pItem : m_arrItems)
 			{
+				if (pItem->IsVisible() == false)
+					continue;
+
 				CSize sizeMinimal = pItem->GetMinimal();
 
 				CRectangle rectItem;
@@ -174,6 +194,9 @@ namespace Layouts
 
 			for (auto pItem : m_arrItems)
 			{
+				if (pItem->IsVisible() == false)
+					continue;
+
 				CSize sizeMinimal = pItem->GetMinimal();
 
 				if (pItem->HorizontalPolicy() == Fixed)
@@ -220,6 +243,9 @@ namespace Layouts
 
 			for (auto pItem : m_arrItems)
 			{
+				if (pItem->IsVisible() == false)
+					continue;
+
 				CSize sizeMinimal = pItem->GetMinimal();
 
 				CRectangle rectItem;

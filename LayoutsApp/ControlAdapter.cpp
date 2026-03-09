@@ -18,7 +18,8 @@ namespace Layouts
 		m_pWnd = pWnd;
 
 		CRect rectControl;
-		m_pWnd->GetWindowRect(&rectControl);
+		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+			m_pWnd->GetWindowRect(&rectControl);
 
 		m_FixedSize.SetSize(rectControl.Width(), rectControl.Height());
 		m_pOriginalProcedure = 0;
@@ -30,7 +31,8 @@ namespace Layouts
 		m_pWnd = pWnd;
 
 		CRect rectControl;
-		m_pWnd->GetWindowRect(&rectControl);
+		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+			m_pWnd->GetWindowRect(&rectControl);
 
 		m_FixedSize.SetSize(rectControl.Width(), rectControl.Height());
 		m_pOriginalProcedure = 0;
@@ -41,14 +43,32 @@ namespace Layouts
 		if (m_pOriginalProcedure != 0)
 		{
 			m_mapProcedures.RemoveKey(m_pWnd->GetSafeHwnd());
-			SetWindowLongPtr(m_pWnd->GetSafeHwnd(), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(m_pOriginalProcedure));
+			if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+				SetWindowLongPtr(m_pWnd->GetSafeHwnd(), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(m_pOriginalProcedure));
 		}
+	}
+
+	bool CControlAdapter::IsVisible()
+	{
+		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+		{
+			if (m_pWnd->IsWindowVisible() == TRUE)
+				return true;
+
+			/* BOOL bVisible = GetWindowLong(m_pWnd->GetSafeHwnd(), GWL_STYLE) & WS_VISIBLE ? TRUE : FALSE;
+			if (bVisible == TRUE)
+				return true;
+				*/
+		}
+
+		return false;
 	}
 
 	void CControlAdapter::Lay()
 	{
 		CRect rectClient;
-		m_pWnd->GetClientRect(&rectClient);
+		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+			m_pWnd->GetClientRect(&rectClient);
 
 		CRectangle Rectangle(rectClient.left, rectClient.top, rectClient.right, rectClient.bottom);
 		Rectangle.RemoveMargins(m_Margins);
@@ -59,6 +79,9 @@ namespace Layouts
 			rectItem.RemoveMargins(m_Margins);
 			m_pLayoutItem->Lay(rectItem);
 		}
+
+		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+			m_pWnd->RedrawWindow();
 	}
 
 	void CControlAdapter::Lay(const CRectangle& Rectangle)
@@ -71,7 +94,8 @@ namespace Layouts
 		if (m_eVerticalPolicy == Layouts::Fixed)
 			rectControl.bottom = rectControl.top + m_FixedSize.Height();
 
-		m_pWnd->SetWindowPos(NULL, rectControl.left, rectControl.top, rectControl.Width(), rectControl.Height(), SWP_NOZORDER);
+		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+			m_pWnd->SetWindowPos(NULL, rectControl.left, rectControl.top, rectControl.Width(), rectControl.Height(), SWP_NOZORDER);
 
 		if (m_pOriginalProcedure == 0)
 		{
@@ -104,22 +128,26 @@ namespace Layouts
 		m_pOriginalProcedure = reinterpret_cast<WNDPROC>(GetWindowLongPtr(m_pWnd->GetSafeHwnd(), GWLP_WNDPROC));
 
 		// Set hook procedure
-		SetWindowLongPtr(m_pWnd->GetSafeHwnd(), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(HookProcedure));
+		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
+			SetWindowLongPtr(m_pWnd->GetSafeHwnd(), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(HookProcedure));
 	}
 
 	LRESULT CALLBACK CControlAdapter::HookProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		LRESULT iResult = 0;
 
-		CControlAdapter* pControl = 0;
-		if (m_mapProcedures.Lookup(hWnd, pControl) == TRUE)
+		CControlAdapter* pControlAdapter = 0;
+		if (m_mapProcedures.Lookup(hWnd, pControlAdapter) == TRUE)
 		{
-			if (message == WM_SIZE)
+			if (::IsWindow(hWnd) == TRUE)
+				iResult = pControlAdapter->m_pOriginalProcedure(hWnd, message, wParam, lParam);
+
+			if (message == WM_SIZE 
+				/* message == WM_SHOWWINDOW */
+				)
 			{
-				pControl->Lay();
-			}
-				
-			iResult = pControl->m_pOriginalProcedure(hWnd, message, wParam, lParam);
+				pControlAdapter->Lay();
+			}			
 		}
 
 		return iResult;
