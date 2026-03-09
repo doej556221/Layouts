@@ -1,21 +1,19 @@
-CC = gcc
-CFLAGS = -g -Wall -std=c++17
-LDFLAGS=
-SOURCES=hello.cpp factorial.cpp
+CXX = g++
+CXXFLAGS = -g -Wall -Wextra -pedantic -std=c++17 -fPIC -DLAYOUTS_EXPORTS
+LDFLAGS =
+EXECUTABLE = Layouts.so
+SOURCES = Layouts.cpp LayoutPoint.cpp LayoutSize.cpp LayoutRect.cpp LayoutMargins.cpp LayoutItem.cpp LayoutGroup.cpp LayoutControl.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=hello
 
+# Build Steps
 all: $(SOURCES) $(EXECUTABLE)
-	
-$(EXECUTABLE): $(OBJECTS) 
-	if [ -d ./objects ] ; then if [ -e ./objects/*.o ] ; then mv ./objects/*.o ; fi ; else mkdir ./objects ; fi ;
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
-	if [ -e $(TARGET).o ] ; then mv *.o ./objects/ ; fi ;
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(LDFLAGS) $(OBJECTS) --shared -o $@
 
 %.o : %.cpp %.h
-	$(CC) $(CFLAGS) $< -o $@
+	$(CXX) $(CXXFLAGS) $< -c $@
 
-.PHONY : clean
-clean :
-	$(RM) $(TARGET)
-	$(RM) -r ./objects
+.PHONY: clean
+clean:
+	rm -f $(EXECUTABLE) $(OBJECTS)

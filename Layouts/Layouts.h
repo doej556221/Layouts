@@ -4,7 +4,6 @@
 
 #pragma once
 
-// Exports
 #ifdef _WINDOWS
 
 #ifdef LAYOUTS_EXPORTS
@@ -15,7 +14,11 @@
 
 #else
 
+#ifdef LAYOUTS_EXPORTS
+#define LAYOUTS_API __attribute__((visibility("default")))
+#else
 #define LAYOUTS_API
+#endif
 
 #endif
 
