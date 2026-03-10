@@ -56,6 +56,9 @@ namespace Layouts
 
 		for (auto pItem : m_arrItems)
 		{
+			if (pItem->IsVisible() == false)
+				continue;
+
 			LayoutPolicy ItemHorizontalPolicy = pItem->HorizontalPolicy();
 
 			if (ItemHorizontalPolicy > GeneralHorizontalPolicy)
@@ -71,6 +74,9 @@ namespace Layouts
 
 		for (auto pItem : m_arrItems)
 		{
+			if (pItem->IsVisible() == false)
+				continue;
+
 			LayoutPolicy ItemVerticalPolicy = pItem->VerticalPolicy();
 
 			if (ItemVerticalPolicy > GeneralVerticalPolicy)
