@@ -21,31 +21,31 @@
     <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layouts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutItem.h">
+    <ClInclude Include="include\LayoutControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutControl.h">
+    <ClInclude Include="include\LayoutGroup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutRect.h">
+    <ClInclude Include="include\LayoutItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutPoint.h">
+    <ClInclude Include="include\LayoutMargins.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutSize.h">
+    <ClInclude Include="include\LayoutPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutGroup.h">
+    <ClInclude Include="include\LayoutRect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LayoutMargins.h">
+    <ClInclude Include="include\Layouts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LayoutSize.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

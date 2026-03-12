@@ -90,6 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -107,6 +108,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -122,6 +124,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -139,6 +142,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -151,26 +155,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
-    <ClInclude Include="LayoutControl.h" />
-    <ClInclude Include="LayoutItem.h" />
-    <ClInclude Include="LayoutPoint.h" />
-    <ClInclude Include="LayoutRect.h" />
-    <ClInclude Include="Layouts.h" />
+    <ClInclude Include="include\LayoutControl.h" />
+    <ClInclude Include="include\LayoutGroup.h" />
+    <ClInclude Include="include\LayoutItem.h" />
+    <ClInclude Include="include\LayoutMargins.h" />
+    <ClInclude Include="include\LayoutPoint.h" />
+    <ClInclude Include="include\LayoutRect.h" />
+    <ClInclude Include="include\Layouts.h" />
+    <ClInclude Include="include\LayoutSize.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="LayoutControl.cpp" />
     <ClCompile Include="LayoutGroup.cpp" />
-    <ClInclude Include="LayoutGroup.h" />
     <ClCompile Include="LayoutItem.cpp" />
     <ClCompile Include="LayoutMargins.cpp" />
-    <ClInclude Include="LayoutMargins.h" />
     <ClCompile Include="LayoutPoint.cpp" />
     <ClCompile Include="LayoutRect.cpp" />
     <ClCompile Include="Layouts.cpp" />
     <ClCompile Include="LayoutSize.cpp" />
-    <ClInclude Include="LayoutSize.h" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
