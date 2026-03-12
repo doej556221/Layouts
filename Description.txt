@@ -1,0 +1,2 @@
+Layouts is the main project folder
+LayoutsApp is a folder for demonstration application
