@@ -1,6 +1,13 @@
 
-// LayoutMargins.cpp : Defines margins of control in layout
-//
+/**
+ * \file LayoutMargins.cpp
+ * \brief Файл средств работы с отступами содержимого размещений
+ * \details
+ * Этот файл содержит реализацию средств работы с отступами содержимого размещений
+ * \see LayoutPoint.cpp
+ * \see LayoutSize.cpp
+ * \see LayoutRect.cpp
+ */
 
 #include "pch.h"
 #include "LayoutMargins.h"

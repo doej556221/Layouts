@@ -1,8 +1,13 @@
 
-// Layouts.h : Defines supplementary structures and classes to use with controls or layouts
-//
+/**
+ * \file Layouts.h
+ * \brief Файл функций проекта
+ * \details
+ * Этот файл содержит функции проекта
+ */
 
-#pragma once
+#ifndef LAYOUTS_HEADER
+#define LAYOUTS_HEADER
 
 #ifdef _WINDOWS
 
@@ -27,23 +32,36 @@ public:
 	CLayouts(void);
 };
 
-extern LAYOUTS_API int nLayouts;
-LAYOUTS_API int fnLayouts(void);
+extern LAYOUTS_API int nLayoutsVersion;
+LAYOUTS_API int LayoutsVersion(void);
 
 namespace Layouts
 {
-
+	/*!
+		\class LayoutPolicy
+		\brief Ориентация размещения
+		\details
+		Ориентация, с которой размещение упорядочивает свое содержимое
+	*/
 	enum Orientation
 	{
 		Horizontal,
 		Vertical
 	};
 
+	/*!
+		\class LayoutPolicy
+		\brief Политика размещения
+		\details
+		Политика, которую размещение требует для размещения своего содержимого
+	*/
 	enum LayoutPolicy
 	{
-		Fixed,
-		Minimal,
-		Stretched,
-		Preferred
+		Fixed, ///< Фиксированный размер
+		Minimal, ///< Минимальный размер
+		Preferred, ///< Предпочтительный
+		Stretched ///< Растянутый
 	};
 }
+
+#endif

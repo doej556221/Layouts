@@ -1,19 +1,33 @@
 
-// LayoutItem.h : Defines margins of control in layout
-//
+/**
+ * \file LayoutMargins.h
+ * \brief Файл средств работы с отступами содержимого размещений
+ * \details
+ * Этот файл содержит средства работы с отступами содержимого размещений
+ * \see LayoutPoint.h
+ * \see LayoutSize.h
+ * \see LayoutRect.h
+ */
 
-#pragma once
+#ifndef LAYOUTMARGINS_HEADER
+#define LAYOUTMARGINS_HEADER
+
 #include "Layouts.h"
 
 namespace Layouts
 {
-
+	/*!
+	\class CMargins
+	\brief Отступ
+	\details
+	Отступ, который используется для расположения содержимого размещений
+	*/
 	class LAYOUTS_API CMargins
 	{
-		int m_iTop;
-		int m_iLeft;
-		int m_iBottom;
-		int m_iRight;
+		int m_iTop; ///< Отступ сверху
+		int m_iLeft; ///< Отступ слева
+		int m_iBottom; ///< Отступ снизу
+		int m_iRight; ///< Отступ справа
 
 	public:
 		CMargins();
@@ -36,3 +50,5 @@ namespace Layouts
 	};
 
 }
+
+#endif

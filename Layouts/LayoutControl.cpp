@@ -1,6 +1,11 @@
 
-// LayoutControl.cpp : Defines control item to use inside layout
-//
+/**
+ * \file LayoutControl.cpp
+ * \brief Файл размещения контрола
+ * \details
+ * Этот файл содержит реализацию элемента размещения контрола
+ * \see LayoutItem.cpp
+ */
 
 #include "pch.h"
 #include "LayoutControl.h"

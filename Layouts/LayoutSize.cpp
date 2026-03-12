@@ -1,6 +1,12 @@
 
-// LayoutSize.cpp : Defines size for control or layout
-//
+/**
+ * \file LayoutSize.cpp
+ * \brief Файл работы c размерами содержимого размещений
+ * \details
+ * Этот файл содержит реализацию средств работы с размерами содержимого размещений
+ * \see LayoutPoint.cpp
+ * \see LayoutRect.cpp
+ */
 
 #include "pch.h"
 #include "LayoutSize.h"

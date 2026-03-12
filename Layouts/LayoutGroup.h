@@ -1,8 +1,15 @@
 
-// LayoutsGroup.h : Defines a group of controls or inner layouts
-//
+/**
+ * \file LayoutGroup.h
+ * \brief Файл группы контролов и размещений
+ * \details
+ * Этот файл содержит группы контролов и размещений
+ * \see LayoutItem.h
+ */
 
-#pragma once
+#ifndef LAYOUTGROUP_HEADER
+#define LAYOUTGROUP_HEADER
+
 #include "Layouts.h"
 #include "LayoutItem.h"
 
@@ -15,6 +22,12 @@ namespace Layouts
 	class CMargins;
 	class CLayoutControl;
 
+	/*!
+	\class CLayoutGroup
+	\brief Элемент размещения в группе
+	\details
+	Элемент размешения контролов и вложенных размещений в группе по горизонтали или вертикали
+	*/
 	class LAYOUTS_API CLayoutGroup : public CLayoutItem
 	{
 	public:
@@ -45,3 +58,5 @@ namespace Layouts
 	};
 
 }
+
+#endif

@@ -1,6 +1,10 @@
 
-// LayoutsItem.cpp : Defines an abstract layout item inherit by controls or layouts
-//
+/**
+ * \file LayoutItem.cpp
+ * \brief Файл элемента размещений
+ * \details
+ * Этот файл содержит реализацию элемента размещений
+ */
 
 #include "pch.h"
 #include "Layouts.h"

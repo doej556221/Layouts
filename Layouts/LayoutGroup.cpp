@@ -1,6 +1,11 @@
 
-// LayoutsGroup.cpp : Defines a group of controls or inner layouts
-//
+/**
+ * \file LayoutGroup.cpp
+ * \brief Файл группы контролов и размещений
+ * \details
+ * Этот файл содержит реализацию группы контролов и размещений
+ * \see LayoutItem.cpp
+ */
 
 #include "pch.h"
 #include "LayoutGroup.h"

@@ -1,6 +1,13 @@
 
-// LayoutRect.cpp : Defines rectagular area for control or layout
-//
+/**
+ * \file LayoutRect.cpp
+ * \brief Модуль для работы с рамками содержимого размещений
+ * \details
+ * Этот файл содержит реализацию средств работы с рамками содержимого размещений
+ * \see LayoutPoint.cpp
+ * \see LayoutSize.cpp
+ * \see LayoutMargins.cpp
+ */
 
 #include "pch.h"
 #include "LayoutRect.h"

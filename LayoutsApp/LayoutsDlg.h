@@ -1,4 +1,4 @@
-
+﻿
 // LayoutsDlg.h : dialog header file
 //
 

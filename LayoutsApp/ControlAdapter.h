@@ -1,4 +1,4 @@
-
+﻿
 // Control.h: Defines MFC Control based on LayoutControl class
 //
 

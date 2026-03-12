@@ -1,6 +1,13 @@
 
-// LayoutPoint.cpp : Defines point position for control or layout
-//
+/**
+ * \file LayoutPoint.cpp
+ * \brief Файл средств работы с положением содержимого размещений
+ * \details
+ * Этот файл содержит реализацию средств работы с положением содержимого размещений
+ * \see LayoutSize.cpp
+ * \see LayoutRect.cpp
+ * \see LayoutMargins.cpp
+ */
 
 #include "pch.h"
 #include "LayoutPoint.h"

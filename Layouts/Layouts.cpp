@@ -1,19 +1,18 @@
 
-// Layouts.cpp : Defines supplementary structures and classes to use with controls or layouts
-//
+/**
+ * \file Layouts.cpp
+ * \brief Файл функций проекта
+ * \details
+ * Этот файл содержит реализацию функций проекта
+ */
 
 #include "pch.h"
 #include "framework.h"
 #include "Layouts.h"
 
-LAYOUTS_API int nLayouts = 0;
+LAYOUTS_API int nLayoutsVersion = 0.2;
 
-LAYOUTS_API int fnLayouts(void)
+LAYOUTS_API int LayoutsVersion(void)
 {
-    return 0;
-}
-
-CLayouts::CLayouts()
-{
-    return;
+    return nLayoutsVersion;
 }

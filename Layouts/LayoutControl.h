@@ -1,8 +1,15 @@
 
-// LayoutControl.h : Defines control item to use inside layout
-//
+/**
+ * \file LayoutControl.h
+ * \brief Файл размещения контрола
+ * \details
+ * Этот файл содержит элемент размещения контрола
+ * \see LayoutItem.h
+ */
 
-#pragma once
+#ifndef LAYOUTCONTROL_HEADER
+#define LAYOUTCONTROL_HEADER
+
 #include "Layouts.h"
 #include "LayoutItem.h"
 #include "LayoutMargins.h"
@@ -11,6 +18,12 @@
 
 namespace Layouts
 {
+	/*!
+	\class CLayoutControl
+	\brief Класс элемента размещения контрола
+	\details
+	Элемент размешения контрола
+	*/
 	class LAYOUTS_API CLayoutControl : public CLayoutItem
 	{
 	public:
@@ -48,3 +61,5 @@ namespace Layouts
 	};
 
 }
+
+#endif

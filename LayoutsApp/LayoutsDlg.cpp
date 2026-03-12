@@ -1,4 +1,4 @@
-
+﻿
 // LayoutsDlg.cpp : dialog implementation file
 //
 

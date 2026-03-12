@@ -1,8 +1,14 @@
 
-// LayoutsItem.h : Defines an abstract layout item inherit by controls or layouts
-//
+/**
+ * \file LayoutItem.h
+ * \brief Файл элемента размещений
+ * \details
+ * Этот файл содержит элемент размещений
+ */
 
-#pragma once
+#ifndef LAYOUTITEM_HEADER
+#define LAYOUTITEM_HEADER
+
 #include "Layouts.h"
 
 namespace Layouts
@@ -11,6 +17,12 @@ namespace Layouts
 	class CRectangle;
 	class CMargins;
 
+	/*!
+	\class CLayoutItem
+	\brief Класс элемента размещений
+	\details
+	Элемент размещений, который используется для расположения содержимого производными классами
+	*/
 	class LAYOUTS_API CLayoutItem
 	{
 	public:
@@ -35,3 +47,5 @@ namespace Layouts
 	};
 
 }
+
+#endif
