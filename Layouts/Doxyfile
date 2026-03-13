@@ -1,0 +1,87 @@
+# Doxyfile 1.9.6
+
+# Проект
+PROJECT_NAME           = "Layouts"
+PROJECT_BRIEF          = "Layouts of window controls"
+PROJECT_NUMBER         = "0.2"
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS       = YES
+
+# Входные данные
+INPUT                = . include
+FILE_PATTERNS        = *.cpp *.h *.hpp *.c
+RECURSIVE            = YES
+EXCLUDE              = build test
+EXCLUDE_PATTERNS     = *test* *mock*
+INPUT_ENCODING       = utf-8
+DOXYFILE_ENCODING   = utf-8
+
+# Основной язык вывода
+OUTPUT_LANGUAGE      = English
+
+# Обработка кода
+EXTRACT_ALL          = NO
+EXTRACT_PRIVATE      = YES
+EXTRACT_STATIC       = YES
+HIDE_UNDOC_MEMBERS  = NO
+HIDE_UNDOC_CLASSES   = NO
+
+# Форматирование
+JAVADOC_AUTOBRIEF    = YES
+QT_AUTOBRIEF         = NO
+MULTILINE_CPP_IS_BRIEF = NO
+INHERIT_DOCS         = YES
+SEPARATE_MEMBER_PAGES = NO
+
+# Выходные форматы
+GENERATE_HTML        = YES
+HTML_OUTPUT          = html
+HTML_EXTRA_STYLESHEET = custom.css
+HTML_COLORSTYLE_HUE  = 220
+HTML_COLORSTYLE_SAT  = 100
+HTML_COLORSTYLE_GAMMA = 80
+
+GENERATE_LATEX       = NO
+GENERATE_MAN         = NO
+GENERATE_RTF         = NO
+GENERATE_XML         = NO
+GENERATE_DOCBOOK     = NO
+
+# Навигация и структура
+FULL_PATH_NAMES     = YES
+STRIP_FROM_PATH     = $(PWD)
+STRIP_FROM_INC_PATH  =
+SHORT_NAMES          = NO
+JAVA_SPECIFIC_DOC_TAG = NO
+
+# Дополнительные настройки
+ALWAYS_DETACHED_TAGS = NO
+INTERNAL_DOCS        = NO
+CASE_SENSE_NAMES     = YES
+SHOW_USED_FILES     = YES
+SHOW_FILES          = YES
+SHOW_NAMESPACES     = YES
+
+# Макросы и условная компиляция
+ENABLE_PREPROCESSING = YES
+MACRO_EXPANSION      = NO
+EXPAND_ONLY_PREDEF   = NO
+SEARCH_INCLUDES      = YES
+INCLUDE_PATH         =
+INCLUDE_FILE_PATTERNS =
+PREDEFINED           =
+EXPAND_AS_DEFINED    =
+SKIP_FUNCTION_MACROS = YES
+
+# Графики и диаграммы
+HAVE_DOT             = YES
+DOT_GRAPH_MAX_NODES  = 50
+MAX_DOT_GRAPH_DEPTH  = 0
+DOT_TRANSPARENT      = YES
+DOT_MULTI_TARGETS    = YES
+
+# Поиск и индексация
+SEARCHENGINE         = YES
+SERVER_BASED_SEARCH  = NO
+EXTERNAL_SEARCH      = NO
+SEARCHENGINE_LIB     =

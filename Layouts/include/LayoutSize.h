@@ -1,9 +1,12 @@
 
 /**
  * \file LayoutSize.h
- * \brief Файл работы c размерами содержимого размещений
- * \details
- * Этот файл содержит реализацию средств работы с размерами содержимого размещений
+ * \~english @brief File for layout size
+ * \~english @details
+ * This file contains classes and tools for layout size
+ * \~russian @brief Файл работы c размерами содержимого размещений
+ * \~russian @details
+ * Этот файл содержит средства работы с размерами содержимого размещений
  * \see LayoutPoint.h
  * \see LayoutRect.h
  */
@@ -17,87 +20,138 @@ namespace Layouts
 {
 	class CMargins;
 
-	/*!
-	\class CSize
-	\brief Размер
-	\details
-	Размер, который используется для расположения содержимого размещений
+	/**
+	* \class CSize
+	* \~english @brief Size
+	* \~english @details
+	* Size used to place layouts contents
+	* \~russian @brief Размер
+	* \~russian @details
+	* Размер, который используется для расположения содержимого размещений
 	*/
 	class LAYOUTS_API CSize
 	{
-		//@{
-		int m_iWidth; ///< Размер по ширине
-		int m_iHeight; ///< Размер по высоте
-		//@}
+		/**
+		* \~english @brief Width
+		* \~russian @brief Размер по ширине
+		*/
+		int m_iWidth;
+
+		/**
+		* \~english @brief Height
+		* \~russian @brief Размер по высоте
+		*/
+		int m_iHeight;
 
 	public:
 
 		/**
-		* \brief Конструктор класса по-умолчанию
+		* \~english @brief Default constructor
+		* \~russian @brief Конструктор класса по-умолчанию
 		*/
 		CSize();
 		
 		/** 
-		* \brief Конструктор копирования
-		* \param[in] Size
+		* \~english @brief Copy constructor
+		* \~english @param[in] Size Another class object
+		* \~russian @brief Конструктор копирования
+		* \~russian @param[in] Size Другой экземляр класса
 		*/
 		CSize(const CSize& Size);
 
 		/** 
-		* \brief Конструктор размера с указанием ширины и высоты
-		* \param[in] iWidth Размер по ширине
-		* \param[in] iHeight Размер по высоте
+		* \~english @brief Constructor by width and height
+		* \~englush @param[in] iWidth Width
+		* \~english @param[in] iHeight Height
+		* \~russian @brief Конструктор размера по ширине и высоте
+		* \~russian @param[in] iWidth Размер по ширине
+		* \~russian @param[in] iHeight Размер по высоте
 		*/
 		CSize(int iWidth, int iHeight);
 
 		/** 
-		* \brief Размер по ширине 
-		* \return Размер по ширине 
+		* \~english @brief Get width
+		* \~english @return Width
+		* \~russian @brief Размер по ширине 
+		* \~russian @return Размер по ширине 
 		*/
 		int Width() const;
 		
 		/** 
-		* \brief Размер по высоте
-		* \return Размер по ширине
+		* \~english @brief Get height
+		* \~english @return Height
+		* \~russian @brief Размер по высоте
+		* \~russian @return Размер по ширине
 		*/ 
 		int Height() const;
 		
 		/** 
-		* \brief Установить размер по ширине
-		* \param[in] iWidth Размер по ширине
+		* \~english @brief Set width
+		* \~english @param[in] iWidth Width
+		* \~russian @brief Установить размер по ширине
+		* \~russian @param[in] iWidth Размер по ширине
 		*/
 		void SetWidth(int iWidth);
 
 		/** 
-		* \brief Установить размер по высоте
-		* \param[in] iHeight Размер по высоте
+		* \~english @brief Set height
+		* \~english @param[in] iHeight Height
+		* \~russian @brief Установить размер по высоте
+		* \~russian @param[in] iHeight Размер по высоте
 		*/
 		void SetHeight(int iHeight);
 		
 		/** 
-		* \brief Установить размер по другому экземпляру класса
-		* \param[in] Size
+		* \~english @brief Set size
+		* \~english @param[in] Size Another size object
+		* \~russian @brief Установить размер по другому размеру
+		* \~russian @param[in] Size
 		*/
 		void SetSize(const CSize& Size);
 
 		/** 
-		* \brief Установить размер по ширине и высоте
-		* \param[in] iWidth Размер по ширине
-		* \param[in] iHeight Размер по высоте
+		* \~english @brief Set size
+		* \~english @param[in] iWidth Width
+		* \~english @param[in] iHeight Height
+		* \~russian @brief Установить размер по ширине и высоте
+		* \~russian @param[in] iWidth Размер по ширине
+		* \~russian @param[in] iHeight Размер по высоте
 		*/
 		void SetSize(int iWidth, int iHeight);
 
 		/** 
-		* \brief Добавить отступы к размеру
-		* \param[in] Marings
+		* \~english @brief Add margins
+		* \~english @param[in] Margins Collection of values to add to rectangle
+		* \~russian @brief Добавить отступы к размеру
+		* \~russian @param[in] Marings
 		*/
 		void AddMargins(const CMargins& Margins);
-		
+
+		/**
+		* \~english @brief Add margins
+		* \~english @param[in] iMargins Margin value to add to rectangle
+		* \~russian @brief Добавить отступы к размеру
+		* \~russian @param[in] iMarings Значение отступа, которое необходимо добавить к размеру
+		*/
+		void AddMargins(int iMargins);
+
+
 		/** 
-		* \brief Вычесть отступы из размера
-		* \param[in] Margins
+		* \~english @brief Remove margins
+		* \~english @param[in] Margins Collection of values to remove from rectangle
+		* \~russian @brief Вычесть отступы из размера
+		* \~russian @param[in] Margins
 		*/
 		void RemoveMargins(const CMargins& Margins);
+
+		/**
+		* \~english @brief Remove margins
+		* \~english @param[in] iMargins Margin value to remove from rectangle
+		* \~russian @brief Вычесть отступы из размера
+		* \~russian @param[in] iMarings Значение отступа, которое необходимо вычесть из размеру
+		*/
+		void RemoveMargins(int iMargins);
+
 	};
 
 }

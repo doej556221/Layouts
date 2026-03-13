@@ -1,9 +1,12 @@
 
 /**
  * \file LayoutSize.cpp
- * \brief Файл работы c размерами содержимого размещений
- * \details
- * Этот файл содержит реализацию средств работы с размерами содержимого размещений
+ * \~english @brief File for layout size
+ * \~english @details
+ * This file contains implementation of classes and tools for layout size
+ * \~russian @brief Файл размера содержимого размещений
+ * \~russian @details
+ * Этот файл содержит реализацию классов и средств размера размещений
  * \see LayoutPoint.cpp
  * \see LayoutRect.cpp
  */
@@ -71,9 +74,23 @@ namespace Layouts
         m_iHeight = m_iHeight + Margins.Top() + Margins.Bottom();
     }
 
+    void CSize::AddMargins(int iMargin)
+    {
+        m_iWidth = m_iWidth + iMargin + iMargin;
+        m_iHeight = m_iHeight + iMargin + iMargin;
+    }
+
     void CSize::RemoveMargins(const CMargins& Margins)
     {
         m_iWidth = m_iWidth - Margins.Left() - Margins.Right();
         m_iHeight = m_iHeight - Margins.Top() - Margins.Bottom();
     }
+
+    void CSize::RemoveMargins(int iMargin)
+    {
+        m_iWidth = m_iWidth - iMargin - iMargin;
+        m_iHeight = m_iHeight - iMargin - iMargin;
+    }
+
 }
+

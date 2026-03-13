@@ -1,9 +1,12 @@
 
 /**
  * \file LayoutRect.cpp
- * \brief Модуль для работы с рамками содержимого размещений
- * \details
- * Этот файл содержит реализацию средств работы с рамками содержимого размещений
+ * \~english @brief File for layout rectangle
+ * \~english @details
+ * This file contains implementation of classes and tools for layout rectangle
+ * \~russian @brief Файл прямоугольника содержимого размещений
+ * \~russian @details
+ * Этот файл содержит реализацию классов и средств для прямоугольника
  * \see LayoutPoint.cpp
  * \see LayoutSize.cpp
  * \see LayoutMargins.cpp

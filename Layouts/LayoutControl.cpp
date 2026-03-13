@@ -1,8 +1,11 @@
 
 /**
  * \file LayoutControl.cpp
- * \brief Файл размещения контрола
- * \details
+ * \~english @brief File for control layout
+ * \~english @details
+ * This file contains implementation of classes and tools for control layout
+ * \~russian @brief Файл размещения контрола
+ * \~russian @details
  * Этот файл содержит реализацию элемента размещения контрола
  * \see LayoutItem.cpp
  */
@@ -121,6 +124,11 @@ namespace Layouts
 	void CLayoutControl::SetDefaultMargins(int iMargin)
 	{
 		m_DefaultMargins.SetMargins(iMargin);
+	}
+
+	void CLayoutControl::SetDefaultMargins(int iLeft, int iTop, int iRight, int iBottom)
+	{
+		m_DefaultMargins.SetMargins(iLeft, iTop, iRight, iBottom);
 	}
 
 	void CLayoutControl::SetDefaultMargins(const CMargins& Margins)

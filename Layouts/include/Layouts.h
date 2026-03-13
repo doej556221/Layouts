@@ -1,9 +1,12 @@
 
 /**
  * \file Layouts.h
- * \brief Файл функций проекта
- * \details
- * Этот файл содержит функции проекта
+ * \~english @brief File for project functions
+ * \~english @details
+ * This file contains general project functions
+ * \~russian @brief Файл функций проекта
+ * \~russian @details
+ * Этот файл содержит общие функции проекта
  */
 
 #ifndef LAYOUTS_HEADER
@@ -65,3 +68,4 @@ namespace Layouts
 }
 
 #endif
+

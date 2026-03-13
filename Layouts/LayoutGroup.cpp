@@ -1,9 +1,12 @@
 
 /**
  * \file LayoutGroup.cpp
- * \brief Файл группы контролов и размещений
+ * \~english @brief File for control layout
+ * \~english @details
+ * This file contains implementation of classes and tools for group layout
+ * \brief Файл размещения контролов в группе
  * \details
- * Этот файл содержит реализацию группы контролов и размещений
+ * Этот файл содержит реализацию классов и средств размещения элементов в группе
  * \see LayoutItem.cpp
  */
 

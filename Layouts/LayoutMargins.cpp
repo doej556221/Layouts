@@ -1,9 +1,12 @@
 
 /**
  * \file LayoutMargins.cpp
- * \brief Файл средств работы с отступами содержимого размещений
- * \details
- * Этот файл содержит реализацию средств работы с отступами содержимого размещений
+ * \~english @brief File for layout margins
+ * \~english @details
+ * This file contains implementation of classes and tools for layout margins
+ * \~russian @brief Файл отступов содержимого размещений
+ * \~russian @details
+ * Этот файл содержит реализацию классов и средств для отступов размещений
  * \see LayoutPoint.cpp
  * \see LayoutSize.cpp
  * \see LayoutRect.cpp
@@ -37,6 +40,14 @@ namespace Layouts
 		m_iLeft = iLeft;
 		m_iBottom = iBottom;
 		m_iRight = iRight;
+	}
+
+	CMargins::CMargins(int iMargin)
+	{
+		m_iTop = iMargin;
+		m_iLeft = iMargin;
+		m_iBottom = iMargin;
+		m_iRight = iMargin;
 	}
 
 	int CMargins::Left() const

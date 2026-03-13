@@ -1,9 +1,12 @@
 
 /**
  * \file LayoutPoint.cpp
- * \brief Файл средств работы с положением содержимого размещений
- * \details
- * Этот файл содержит реализацию средств работы с положением содержимого размещений
+ * \~english @brief File for layout point
+ * \~english @details
+ * This file contains implementation of classes and tools for layout point
+ * \~russian @brief Файл точки для содержимого размещений
+ * \~russian @details
+ * Этот файл содержит реализацию классов и средств для точки размещений
  * \see LayoutSize.cpp
  * \see LayoutRect.cpp
  * \see LayoutMargins.cpp

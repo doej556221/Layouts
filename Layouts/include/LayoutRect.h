@@ -1,8 +1,11 @@
 
 /**
  * \file LayoutRect.h
- * \brief Файл средств работы с рамками содержимого размещений
- * \details
+ * \~english @brief File for layout rectangle
+ * \~english @details
+ * This file contains classes and tools for layout rectangle
+ * \~russian @brief Файл средств работы с рамками содержимого размещений
+ * \~russian @details
  * Этот файл содержит средства работы с рамками содержимого размещений
  * \see LayoutPoint.h
  * \see LayoutSize.h
@@ -21,11 +24,14 @@ namespace Layouts
 	class CSize;
 	class CMargins;
 
-	/*!
-	\class CRectangle
-	\brief Прямоугольник
-	\details
-	Прямоугольник, который используется для расположения содержимого размещений
+	/**
+	* \class CRectangle
+	* \~english @brief Rectangle
+	* \~english @details
+	* Rectangle used to place layouts contents
+	* \~russian @brief Прямоугольник
+	* \~russian @details
+	* Прямоугольник, который используется для расположения содержимого размещений
 	*/
 	class LAYOUTS_API CRectangle
 	{
@@ -63,9 +69,9 @@ namespace Layouts
 
 		/**
 		* \~english @brief Copy constructor
-		* \~english @param[in] Rectangle Rectangle
+		* \~english @param[in] Rectangle Another class object
 		* \~russian @brief Конструктор копирования
-		* \~russian @param[in] Rectangle Рамка
+		* \~russian @param[in] Rectangle Другой экземпляр класса
 		*/
 		CRectangle(const CRectangle& Rectangle);
 
@@ -262,7 +268,7 @@ namespace Layouts
 		/**
 		* \~english @brief Set rectangle
 		* \~english @param[in] iLeft Left position of rectangle
-		* \~english @param[in] iRight Right position of rectangle
+		* \~english @param[in] iTop Top position of rectangle
 		* \~english @param[in] iRight Right position of rectangle
 		* \~english @param[in] iBottom Bottom position of rectangle
 		* \~russian @brief Установить прямоугольник
@@ -275,7 +281,7 @@ namespace Layouts
 
 		/**
 		* \~english @brief Add margins to rectangle
-		* \~english @param[in] Margins Collection of values to remove from rectangle
+		* \~english @param[in] Margins Collection of values to add to rectangle
 		* \~russian @brief Добавить отступы к прямоугольнику
 		* \~russian @param[in] Margins Коллекция значений для добавления к прямоугольнику
 		*/
@@ -283,7 +289,7 @@ namespace Layouts
 
 		/**
 		* \~english @brief Add margins to rectangle
-		* \~english @param[in] iMargins Margin value to remove from rectangle
+		* \~english @param[in] iMargins Margin value to add to rectangle
 		* \~russian @brief Добавить отступы к прямоугольнику
 		* \~russian @param[in] iMargins Значение отступов для вычитания из прямоугольника
 		*/
