@@ -1,12 +1,12 @@
 
 /**
  * \file LayoutItem.cpp
- * \~english @brief File for base layout
+ * \~english @brief File for base layout item
  * \~english @details
  * This file contains implementation of classes and tools for base layout item
- * \~russian @brief Файл базового элемента размещений
+ * \~russian @brief Файл для базового элемента размещений
  * \~russian @details
- * Этот файл содержит реализацию классов и средств базового размещения
+ * Этот файл содержит реализацию классов и средств для базового элемента размещений
  */
 
 #include "pch.h"

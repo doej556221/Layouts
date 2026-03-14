@@ -4,9 +4,9 @@
  * \~english @brief File for layout point
  * \~english @details
  * This file contains implementation of classes and tools for layout point
- * \~russian @brief Файл точки для содержимого размещений
+ * \~russian @brief Файл для положения содержимого размещений
  * \~russian @details
- * Этот файл содержит реализацию классов и средств для точки размещений
+ * Этот файл содержит реализацию классов и средств для положения размещений
  * \see LayoutSize.cpp
  * \see LayoutRect.cpp
  * \see LayoutMargins.cpp

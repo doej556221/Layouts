@@ -4,9 +4,9 @@
  * \~english @brief File for layout rectangle
  * \~english @details
  * This file contains classes and tools for layout rectangle
- * \~russian @brief Файл средств работы с рамками содержимого размещений
+ * \~russian @brief Файл для рамок размещений
  * \~russian @details
- * Этот файл содержит средства работы с рамками содержимого размещений
+ * Этот файл содержит классы и средства для рамок размещений
  * \see LayoutPoint.h
  * \see LayoutSize.h
  * \see LayoutMargins.h
@@ -28,10 +28,10 @@ namespace Layouts
 	* \class CLayoutRectangle
 	* \~english @brief Rectangle
 	* \~english @details
-	* Rectangle used to place layouts contents
+	* Rectangle that is used to place layout items
 	* \~russian @brief Прямоугольник
 	* \~russian @details
-	* Прямоугольник, который используется для расположения содержимого размещений
+	* Прямоугольник, который используется для расположения размещений
 	*/
 	class LAYOUTS_API CLayoutRectangle
 	{
@@ -69,18 +69,18 @@ namespace Layouts
 
 		/**
 		* \~english @brief Copy constructor
-		* \~english @param[in] Rectangle Another class object
+		* \~english @param[in] Rectangle Another object
 		* \~russian @brief Конструктор копирования
 		* \~russian @param[in] Rectangle Другой экземпляр класса
 		*/
 		CLayoutRectangle(const CLayoutRectangle& Rectangle);
 
 		/**
-		* \~english @brief Constructor by boundaries
-		* \~english @param[in] iLeft Left of rectangle
-		* \~english @param[in] iTop Top of rectangle
-		* \~english @param[in] iRight Right of rectangle
-		* \~english @param[in] iBottom Bottom of rectangle
+		* \~english @brief Constructor with boundaries
+		* \~english @param[in] iLeft Left position of rectangle
+		* \~english @param[in] iTop Top position of rectangle
+		* \~english @param[in] iRight Right position of rectangle
+		* \~english @param[in] iBottom Bottom position of rectangle
 		* \~russian @brief Конструктор по границам
 		* \~russian @param[in] iLeft Положение рамки слева
 		* \~russian @param[in] iTop Положение рамки сверху
@@ -90,7 +90,7 @@ namespace Layouts
 		CLayoutRectangle(int iLeft, int iTop, int iRight, int iBottom);
 		
 		/**
-		* \~english @brief Constructor by position and size
+		* \~english @brief Constructor with position and size
 		* \~english @param[in] Point Top left position of rectangle
 		* \~english @param[in] Size Size of rectangle
 		* \~russian @brief Конструктор по положению и размеру
@@ -101,7 +101,7 @@ namespace Layouts
 
 		/**
 		* \~english @brief Get left of rectangle
-		* \~english @return Left of rectangle position
+		* \~english @return Left position of rectangle
 		* \~russian @brief Получить положение прямоугольника слева
 		* \~russian @return Положение прямоугольника слева
 		*/
@@ -109,7 +109,7 @@ namespace Layouts
 
 		/**
 		* \~english @brief Get top of rectangle
-		* \~english @return Top of rectangle position
+		* \~english @return Top position of rectangle
 		* \~russian @brief Получить положение прямоугольника сверху
 		* \~russian @return Положение прямоугольника сверху
 		*/
@@ -117,7 +117,7 @@ namespace Layouts
 
 		/**
 		* \~english @brief Get right of rectangle
-		* \~english @return Right of rectangle position
+		* \~english @return Right position of rectangle
 		* \~russian @brief Получить положение прямоугольника справа
 		* \~russian @return Положение прямоугольника справа
 		*/
@@ -125,7 +125,7 @@ namespace Layouts
 
 		/**
 		* \~english @brief Get bottom of rectangle
-		* \~english @return Bottom of rectangle position
+		* \~english @return Bottom position of rectangle
 		* \~russian @brief Получить положение прямоугольника снизу
 		* \~russian @return Положение прямоугольника снизу
 		*/
@@ -199,7 +199,7 @@ namespace Layouts
 
 		/**
 		* \~english @brief Set rectangle position
-		* \~english @param[in] Point Top left point of rectangle
+		* \~english @param[in] Point Top left position of rectangle
 		* \~russian @brief Установить положение прямоугольника
 		* \~russian @param[in] Point Положение прямоугольника сверху слева
 		*/
@@ -249,9 +249,9 @@ namespace Layouts
 
 		/**
 		* \~english @brief Set rectangle
-		* \~english @param[in] Rectangle Another rectangle
+		* \~english @param[in] Rectangle Rectangle
 		* \~russian @brief Установить прямоугольник
-		* \~russian @param[in] Rectangle Другой прямоугольник
+		* \~russian @param[in] Rectangle Прямоугольник
 		*/
 		void SetRectangle(const CLayoutRectangle& Rectangle);
 		
@@ -281,33 +281,33 @@ namespace Layouts
 
 		/**
 		* \~english @brief Add margins to rectangle
-		* \~english @param[in] Margins Collection of values to add to rectangle
+		* \~english @param[in] Margins Margins value
 		* \~russian @brief Добавить отступы к прямоугольнику
-		* \~russian @param[in] Margins Коллекция значений для добавления к прямоугольнику
+		* \~russian @param[in] Margins Значения отступов
 		*/
 		void AddMargins(const CLayoutMargins& Margins);
 
 		/**
 		* \~english @brief Add margins to rectangle
-		* \~english @param[in] iMargins Margin value to add to rectangle
+		* \~english @param[in] iMargins Margins value
 		* \~russian @brief Добавить отступы к прямоугольнику
-		* \~russian @param[in] iMargins Значение отступов для вычитания из прямоугольника
+		* \~russian @param[in] iMargins Значение отступов
 		*/
 		void AddMargins(int iMargins);
 
 		/**
 		* \~english @brief Remove margins from rectangle
-		* \~english @param[in] Margins Collection of values to remove from rectangle
+		* \~english @param[in] Margins Margins value
 		* \~russian @brief Вычесть отступы из прямоугольника
-		* \~russian @param[in] Margins Коллекция значений для отступов из прямоугольника
+		* \~russian @param[in] Margins Значение отступов
 		*/
 		void RemoveMargins(const CLayoutMargins& Margins);
 	
 		/**
 		* \~english @brief Remove margins from rectangle
-		* \~english @param[in] iMargins Margin value to remove from rectangle
+		* \~english @param[in] iMargins Margins value
 		* \~russian @brief Вычесть отступы из прямоугольника
-		* \~russian @param[in] iMargins Значение отступов для вычитания из прямоугольника
+		* \~russian @param[in] iMargins Значение отступов
 		*/
 		void RemoveMargins(int iMargins);
 	};

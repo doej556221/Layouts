@@ -4,9 +4,9 @@
  * \~english @brief File for layout point
  * \~english @details
  * This file contains classes and tools for layout point
- * \~russian @brief Файл средств работы с положением содержимого размещений
+ * \~russian @brief Файл для положения размещений
  * \~russian @details
- * Этот файл содержит средства работы с положением содержимого размещений
+ * Этот файл содержит классы и средства для положения размещений
  * \see LayoutSize.h
  * \see LayoutRect.h
  * \see LayoutMargins.h
@@ -23,10 +23,10 @@ namespace Layouts
 	* \class CLayoutPoint
 	* \~english @brief Point
 	* \~english @details
-	* Point used to place layouts contents
+	* Point that is used to place layout items
 	* \~russian @brief Точка
 	* \~russian @details
-	* Точка, которая используется для расположения содержимого размещений
+	* Точка, которая используется для расположения размещений
 	*/
 	class LAYOUTS_API CLayoutPoint
 	{
@@ -52,16 +52,16 @@ namespace Layouts
 
 		/**
 		* \~english @brief Copy constructor
-		* \~english @param[in] Point Another class object
+		* \~english @param[in] Point Another object
 		* \~russian @brief Конструктор копирования
 		* \~russian @param[in] Rectangle Другой экземпляр класса
 		*/
 		CLayoutPoint(const CLayoutPoint& Point);
 
 		/**
-		* \~english @brief Constructor by left and top positions
-		* \~english @param[in] iLeft Left of point
-		* \~english @param[in] iTop Top of point
+		* \~english @brief Constructor with left and top positions
+		* \~english @param[in] iLeft Left position of point
+		* \~english @param[in] iTop Top position of point
 		* \~russian @brief Конструктор по положению точки
 		* \~russian @param[in] iLeft Положение точки слева
 		* \~russian @param[in] iTop Положение точки сверху
@@ -77,8 +77,8 @@ namespace Layouts
 		int Left() const;
 
 		/**
-		* \~english @brief Get top of point
-		* \~english @return Top of point position
+		* \~english @brief Get top position of point
+		* \~english @return Top position of point
 		* \~russian @brief Получить положение точки сверху
 		* \~russian @return Положение точки сверху
 		*/
@@ -86,7 +86,7 @@ namespace Layouts
 
 
 		/**
-		* \~english @brief Set left of point
+		* \~english @brief Set left position of point
 		* \~english @param[in] iLeft Left position of point
 		* \~russian @brief Установить положение точки слева
 		* \~russian @param[in] iLeft Положение точки слева
@@ -94,7 +94,7 @@ namespace Layouts
 		void SetLeft(int iLeft);
 
 		/**
-		* \~english @brief Set top of point
+		* \~english @brief Set top position of point
 		* \~english @param[in] iTop Top position of point
 		* \~russian @brief Установить положение точки сверху
 		* \~russian @param[in] iTop Положение точки сверху
@@ -103,16 +103,16 @@ namespace Layouts
 
 		/**
 		* \~english @brief Set point
-		* \~english @param[in] Point Another point
+		* \~english @param[in] Point Point
 		* \~russian @brief Установить положение точки
-		* \~russian @param[in] Point Другая точка
+		* \~russian @param[in] Point Точка
 		*/
 		void SetPoint(const CLayoutPoint& Point);
 		
 		/**
 		* \~english @brief Set point
-		* \~english @param[in] iLeft Left of point position
-		* \~english @param[in] iTop Top of point position
+		* \~english @param[in] iLeft Left position of point
+		* \~english @param[in] iTop Top position of point
 		* \~russian @brief Установить положение точки
 		* \~russian @param[in] iLeft Положение точки слева
 		* \~russian @param[in] iTop Положение точки сверху

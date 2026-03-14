@@ -4,9 +4,9 @@
  * \~english @brief File for control layout
  * \~english @details
  * This file contains implementation of classes and tools for control layout
- * \~russian @brief Файл размещения контрола
+ * \~russian @brief Файл для размещения контрола
  * \~russian @details
- * Этот файл содержит реализацию элемента размещения контрола
+ * Этот файл содержит реализацию для размещения контрола
  * \see LayoutItem.cpp
  */
 

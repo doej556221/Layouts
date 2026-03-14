@@ -4,9 +4,9 @@
  * \~english @brief File for group layout
  * \~english @details
  * This file contains classes and tools for group layout
- * \~russian @brief Файл размещения элементов в группе
+ * \~russian @brief Файл для размещения элементов в группе
  * \~russian @details
- * Этот файл содержит классы и средства размещения контрола в группе
+ * Этот файл содержит классы и средства для размещения элементов в группе
  * \see LayoutItem.h
  */
 
@@ -29,7 +29,7 @@ namespace Layouts
 	* \class CLayoutGroup
 	* \~english @brief Group layout
 	* \~english @details
-	* Lays items in horizontal or vertical group
+	* It places items in horizontal or vertical group
 	* \~russian @brief Размещение в группе
 	* \~russian @details
 	* Размещает элементы в горизонтальной или вертикальной группе
@@ -86,7 +86,7 @@ namespace Layouts
 		* \~english @brief Get horizontal policy
 		* \~english @return Horizontal policy value
 		* \~russian @brief Получить значение политики по горизонтали
-		* \~russian @return Значение политики
+		* \~russian @return Значение политики размещения
 		*/
 		LayoutPolicy HorizontalPolicy() override;
 		
@@ -94,22 +94,26 @@ namespace Layouts
 		* \~english @brief Get vertical policy
 		* \~english @return Vertical policy value
 		* \~russian @brief Получить значение политики по вертикали
-		* \~russian @return Значение политики
+		* \~russian @return Значение политики размещения
 		*/
 		LayoutPolicy VerticalPolicy() override;
 		
 		/**
-		* \~english @brief Calculate item visibility
+		* \~english @brief Get layout visibility
 		* \~english @return Visibility value
-		* \~russian @brief Вычислить видимость элемента
+		* \~details
+		* This method returns layout general visibility taking in account its child items
+		* \~russian @brief Получить видимость элемента
 		* \~russian @return Значение видимости
+		* ~russian @details
+		* Возвращает общую видимость размещения с учетом его вложенных элементов
 		*/
 		bool IsVisible() override;
 
 		/**
-		* \~english @brief Place layout contents
-		* \~english @param[in] Rectangle layout area
-		* \~russian @brief Расположить содержимое размещения
+		* \~english @brief Place layout items
+		* \~english @param[in] Rectangular layout area
+		* \~russian @brief Расположить элементы размещения
 		* \~russian @param[in] Прямоугольная область размещения
 		*/
 		void Lay(const CLayoutRectangle& Rectangle) override;
@@ -126,7 +130,7 @@ namespace Layouts
 		* \~english @brief Set layout orientation
 		* \~english @param[in] Orientation value
 		* \~russian @brief Установить ориентацию размещения
-		* \~russian @param[in] Ориентация
+		* \~russian @param[in] Значение ориентации
 		*/
 		void SetOrientation(Orientation Value);
 

@@ -4,9 +4,9 @@
  * \~english @brief File for layout size
  * \~english @details
  * This file contains implementation of classes and tools for layout size
- * \~russian @brief Файл размера содержимого размещений
+ * \~russian @brief Файл для размера содержимого размещений
  * \~russian @details
- * Этот файл содержит реализацию классов и средств размера размещений
+ * Этот файл содержит реализацию классов и средств для размера размещений
  * \see LayoutPoint.cpp
  * \see LayoutRect.cpp
  */

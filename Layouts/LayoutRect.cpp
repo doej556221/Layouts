@@ -4,7 +4,7 @@
  * \~english @brief File for layout rectangle
  * \~english @details
  * This file contains implementation of classes and tools for layout rectangle
- * \~russian @brief Файл прямоугольника содержимого размещений
+ * \~russian @brief Файл для прямоугольника содержимого размещений
  * \~russian @details
  * Этот файл содержит реализацию классов и средств для прямоугольника
  * \see LayoutPoint.cpp

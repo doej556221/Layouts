@@ -4,9 +4,9 @@
  * \~english @brief File for control layout
  * \~english @details
  * This file contains implementation of classes and tools for group layout
- * \brief Файл размещения контролов в группе
+ * \brief Файл для размещения контролов в группе
  * \details
- * Этот файл содержит реализацию классов и средств размещения элементов в группе
+ * Этот файл содержит реализацию классов и средств для размещения элементов в группе
  * \see LayoutItem.cpp
  */
 

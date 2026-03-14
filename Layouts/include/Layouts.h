@@ -6,7 +6,7 @@
  * This file contains general project functions
  * \~russian @brief Файл функций проекта
  * \~russian @details
- * Этот файл содержит общие функции проекта
+ * Этот файл содержит функции проекта
  */
 
 #ifndef LAYOUTS_HEADER
@@ -30,10 +30,16 @@
 
 #endif
 
+#include <string>
+
 class LAYOUTS_API CLayouts {
 public:
 	CLayouts(void);
+
 	int GetVersion();
+
+	void GetTitle(std::string& strTitle);
+	void GetDescription(std::string& strDescription);
 };
 
 extern LAYOUTS_API int nLayoutsVersion;
@@ -41,32 +47,56 @@ LAYOUTS_API int LayoutsVersion(void);
 
 namespace Layouts
 {
-	/*!
-		\class LayoutPolicy
-		\brief Ориентация размещения
-		\details
-		Ориентация, с которой размещение упорядочивает свое содержимое
-	*/
+	/**
+	 * \class LayoutPolicy
+	 * \~english Layout orientation
+	 * \~english @details
+	 * Orientation that is used to place items in layout	
+	 * \~russian @brief Ориентация размещения
+	 * \~russian @details
+	 * Ориентация, с которой размещение упорядочивает свое содержимое
+	 */
 	enum Orientation
 	{
 		Horizontal,
 		Vertical
 	};
 
-	/*!
-		\class LayoutPolicy
-		\brief Политика размещения
-		\details
-		Политика, которую размещение требует для размещения своего содержимого
-	*/
+	/**
+	 * \class LayoutPolicy
+	 * \~english @brief Layout policy
+	 * \~english @details
+	 * Policy that is used to place items in layout
+	 * \~russian @brief Политика размещения
+	 * \~russian @details
+	 * Политика, c которой размещение упорядчивает свое содержимое
+	 */
 	enum LayoutPolicy
 	{
-		Minimal, ///< Минимальный размер
-		Fixed, ///< Фиксированный размер
-		Preferred, ///< Предпочтительный
-		Stretched ///< Растянутый
+		/**
+		* \~english @brief Minimal layout policy
+		* \~russian @brief Минимальная политика размещения
+		*/
+		Minimal,
+
+		/**
+		* \~english @brief Fixed layout policy
+		* \~russian @brief Фиксированная политика размещения
+		*/
+		Fixed,
+
+		/**
+		* \~english @brief Preferred layout policy
+		* \~russian @brief Предпочтительная политика размещения
+		*/
+		Preferred,
+
+		/**
+		* \~english @brief Stretched layout policy
+		* \~russian @brief Растянутая политика размещения
+		*/
+		Stretched
 	};
 }
 
 #endif
-

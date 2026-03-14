@@ -4,9 +4,9 @@
  * \~english @brief File for layout margins
  * \~english @details
  * This file contains classes and tools for layout margins
- * \~russian @brief Файл средств работы с отступами содержимого размещений
+ * \~russian @brief Файл для отступов размещений
  * \~russian @details
- * Этот файл содержит средства работы с отступами содержимого размещений
+ * Этот файл содержит классы и средства для отступов размещений
  * \see LayoutPoint.h
  * \see LayoutSize.h
  * \see LayoutRect.h
@@ -23,10 +23,10 @@ namespace Layouts
 	* \class CLayoutMargins
 	* \~english @brief Margins
 	* \~english @details
-	* Margins used to place layouts contents
+	* Margins that are used to place layout items
 	* \~russian @brief Отступы
 	* \~russian @details
-	* Отступы, которые используются для расположения содержимого размещений
+	* Отступы, которые используются для расположения размещений
 	*/
 	class LAYOUTS_API CLayoutMargins
 	{
@@ -65,19 +65,19 @@ namespace Layouts
 
 		/**
 		* \~english @brief Copy constructor
-		* \~english @param[in] Margins Another class object
+		* \~english @param[in] Margins Another object
 		* \~russian @brief Конструктор копирования
 		* \~russian @param[in] Margins Другой экземпляр класса
 		*/
 		CLayoutMargins(const CLayoutMargins& Margins);
 
 		/**
-		* \~english @brief Constructor by margin values
+		* \~english @brief Constructor with margin values
 		* \~english @param[in] iLeft Left margin
 		* \~english @param[in] iTop Top margin
 		* \~english @param[in] iRight Right margin
 		* \~english @param[in] iBottom Bottom margin
-		* \~russian @brief Конструктор значениям оступа
+		* \~russian @brief Конструктор со значениями отступов
 		* \~russian @param[in] iLeft Отступ слева
 		* \~russian @param[in] iTop Отступ сверху
 		* \~russian @param[in] iRight Отступ справа
@@ -86,15 +86,15 @@ namespace Layouts
 		CLayoutMargins(int iTop, int iLeft, int iBottom, int iRight);
 
 		/**
-		* \~english @brief Сonstructor by margin value
-		* \~english @param[in] iMargin Margin value
-		* \~russian @brief Конструктор по значению отступа
-		* \~russian @param[in] iMargin Значение отступа
+		* \~english @brief Сonstructor with margins value
+		* \~english @param[in] iMargin Margins value
+		* \~russian @brief Конструктор со значением отступов
+		* \~russian @param[in] iMargin Значение отступов
 		*/
 		CLayoutMargins(int iMargin);
 
 		/**
-		* \~english @brief Get left margin value
+		* \~english @brief Get left margin
 		* \~english @return Left margin value
 		* \~russian @brief Получить значение отступа слева
 		* \~russian @return Значение отступа слева
@@ -102,7 +102,7 @@ namespace Layouts
 		int Left() const;
 
 		/**
-		* \~english @brief Get top margin value
+		* \~english @brief Get top margin
 		* \~english @return Top margin value
 		* \~russian @brief Получить значение отступа сверху
 		* \~russian @return Значение отступа сверху
@@ -110,7 +110,7 @@ namespace Layouts
 		int Top() const;
 
 		/**
-		* \~english @brief Get right margin value
+		* \~english @brief Get right margin
 		* \~english @return Right margin value
 		* \~russian @brief Получить значение отступа справа
 		* \~russian @return Значение отступа справа
@@ -118,7 +118,7 @@ namespace Layouts
 		int Right() const;
 
 		/**
-		* \~english @brief Get bottom margin value
+		* \~english @brief Get bottom margin
 		* \~english @return Bottom margin value
 		* \~russian @brief Получить значение отступа снизу
 		* \~russian @return Значение отступа снизу
@@ -126,7 +126,7 @@ namespace Layouts
 		int Bottom() const;
 
 		/**
-		* \~english @brief Set left margin value
+		* \~english @brief Set left margin
 		* \~english @param[in] iLeft Left margin value
 		* \~russian @brief Установить значение отступа слева
 		* \~russian @param[in] iLeft Значение отступа слева
@@ -134,7 +134,7 @@ namespace Layouts
 		void SetLeft(int iLeft);
 
 		/**
-		* \~english @brief Set top margin value
+		* \~english @brief Set top margin
 		* \~english @param[in] iTop Top margin value
 		* \~russian @brief Установить значение отступа сверху
 		* \~russian @param[in] iTop Значение отступа сверху
@@ -142,7 +142,7 @@ namespace Layouts
 		void SetTop(int iTop);
 
 		/**
-		* \~english @brief Set right margin value
+		* \~english @brief Set right margin
 		* \~english @param[in] iRight Right margin value
 		* \~russian @brief Установить значение отступа справа
 		* \~russian @param[in] iRight Значение отступа справа
@@ -150,7 +150,7 @@ namespace Layouts
 		void SetRight(int iRight);
 
 		/**
-		* \~english @brief Set bottom margin value
+		* \~english @brief Set bottom margin
 		* \~english @param[in] iBottom Bottom margin value
 		* \~russian @brief Установить значение отступа снизу
 		* \~russian @param[in] iBottom Значение отступа снизу
@@ -159,9 +159,9 @@ namespace Layouts
 
 		/**
 		* \~english @brief Set margins
-		* \~english @param[in] Margins Collection of margin values
+		* \~english @param[in] Margins Margins value
 		* \~russian @brief Установить отступы
-		* \~russian @param[in] Margins Коллекция значений отступов
+		* \~russian @param[in] Margins Значение отступов
 		*/
 		void SetMargins(const CLayoutMargins& Margins);
 
@@ -169,7 +169,7 @@ namespace Layouts
 		* \~english @brief Set margins
 		* \~english @param[in] iMargin Margins value
 		* \~russian @brief Установить отступы
-		* \~russian @param[in] iMargin Значение оступов
+		* \~russian @param[in] iMargin Значение отступов
 		*/
 		void SetMargins(int iMargin);
 
@@ -179,7 +179,7 @@ namespace Layouts
 		* \~english @param[in] iRight Right margin value
 		* \~english @param[in] iTop Top margin value 
 		* \~english @param[in] iBottom Bottom margin value
-		* \~russian @brief Установить прямоугольник
+		* \~russian @brief Установить отступы
 		* \~russian @param[in] iLeft Значение отступа слева
 		* \~russian @param[in] iTop Значение отступа сверху
 		* \~russian @param[in] iRight Значение отступа справа

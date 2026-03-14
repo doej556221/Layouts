@@ -1,12 +1,12 @@
 
 /**
  * \file LayoutItem.h
- * \~english @brief File for base layout item
+ * \~english @brief File for basic layout item
  * \~english @details
- * This file contains classes and tools for base layout item
- * \~russian @brief Файл базового элемента размещений
+ * This file contains classes and tools for basic layout item
+ * \~russian @brief Файл для базового элемента размещений
  * \~russian @details
- * Этот файл содержит классы и средства базового размещения
+ * Этот файл содержит классы и средства для базового элемента размещений
  */
 
 #ifndef LAYOUTITEM_HEADER
@@ -22,12 +22,12 @@ namespace Layouts
 
 	/**
 	* \class CLayoutItem
-	* \~english @brief Layout item
+	* \~english @brief Base layout item
 	* \~english @details
-	* Layout item used for derived layouts
-	* \~russian @brief Элемент размещения
+	* Basic layout item used for derived layouts
+	* \~russian @brief Базовый элемент размещений
 	* \~russian @details
-	* Элемент размещения, который используется производными размещениями
+	* Базовый элемент размещений, который используется производными размещениями
 	*/
 	class LAYOUTS_API CLayoutItem
 	{
@@ -49,7 +49,7 @@ namespace Layouts
 		* \~english @brief Get horizontal policy
 		* \~english @return Horizontal policy value
 		* \~russian @brief Получить значение политики по горизонтали
-		* \~russian @return Значение политики
+		* \~russian @return Значение политики размещения
 		*/
 		virtual LayoutPolicy HorizontalPolicy();
 
@@ -57,28 +57,32 @@ namespace Layouts
 		* \~english @brief Get vertical policy
 		* \~english @return Vertical policy value
 		* \~russian @brief Получить значение политики по вертикали
-		* \~russian @return Значение политики
+		* \~russian @return Значение политики размещения
 		*/
 		virtual LayoutPolicy VerticalPolicy();
 		
 		/**
-		* \~english @brief Calculate item visibility
+		* \~english @brief Get layout visibility
 		* \~english @return Visibility value
-		* \~russian @brief Вычислить видимость элемента
+		* \~details
+		* This method returns layout general visibility taking in account its child items
+		* \~russian @brief Получить видимость элемента
 		* \~russian @return Значение видимости
+		* ~russian @details
+		* Возвращает общую видимость размещения с учетом его вложенных элементов
 		*/
 		virtual bool IsVisible();
 
 		/**
-		* \~english @brief Place layout contents
-		* \~english @param[in] Rectangle layout area
-		* \~russian @brief Расположить содержимое размещения
+		* \~english @brief Place layout items
+		* \~english @param[in] Rectangular layout area
+		* \~russian @brief Расположить элементы размещения
 		* \~russian @param[in] Прямоугольная область размещения
 		*/
 		virtual void Lay(const CLayoutRectangle& Rectangle);
 
 		/**
-		* \~english @brief Get minimal size of layout area 
+		* \~english @brief Get minimal size of layout area
 		* \~english @return Minimal size value
 		* \~russian @brief Получить минимальный размер области размещения
 		* \~russian @return Размер области
@@ -86,25 +90,25 @@ namespace Layouts
 		virtual CLayoutSize GetMinimal();
 
 		/**
-		* \~english @brief Get spacing
+		* \~english @brief Get layout spacing
 		* \~english @return Spacing value
-		* \~russian @brief Получить расстояние между элементами
+		* \~russian @brief Получить расстояние между элементами размещения
 		* \~russian @return Значение расстояния
 		*/
 		int Spacing();
 
 		/**
-		* \~english @brief Get default spacing
+		* \~english @brief Get layout default spacing
 		* \~english @return Spacing value
-		* \~russian @brief Получить расстояние между элементами по-умолчанию
+		* \~russian @brief Получить расстояние между элементами размещения по-умолчанию
 		* \~russian @return Значение расстояния
 		*/
 		static void SetDefaultSpacing(int iSpacing);
 
 		/**
-		* \~english @brief Set spacing
+		* \~english @brief Set layout spacing
 		* \~english @param[in] Spacing value
-		* \~russian @brief Установить значение расстояния между элементами
+		* \~russian @brief Установить значение расстояния между элементами размещения
 		* \~russian @param[in] Значение расстояния
 		*/
 		void SetSpacing(int iSpacing);
@@ -112,14 +116,14 @@ namespace Layouts
 	protected:
 
 		/**
-		* \~english @brief Default spacing
-		* \~russian @brief Расстояние между элементами по-умолчанию
+		* \~english @brief Default layout spacing
+		* \~russian @brief Расстояние между элементами размещения по-умолчанию
 		*/
 		static int m_iDefaultSpacing;
 
 		/**
-		* \~english @brief Spacing
-		* \~russian @brief Расстояние между элементами
+		* \~english @brief Layout spacing
+		* \~russian @brief Расстояние между элементами размещения
 		*/
 		int m_iSpacing;
 	};

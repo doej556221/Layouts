@@ -4,7 +4,7 @@
  * \~english @brief File for layout margins
  * \~english @details
  * This file contains implementation of classes and tools for layout margins
- * \~russian @brief Файл отступов содержимого размещений
+ * \~russian @brief Файл для отступов размещений
  * \~russian @details
  * Этот файл содержит реализацию классов и средств для отступов размещений
  * \see LayoutPoint.cpp

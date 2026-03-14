@@ -23,6 +23,16 @@ int CLayouts::GetVersion()
     return nLayoutsVersion;
 }
 
+void CLayouts::GetTitle(std::string& strTitle)
+{
+    strTitle = "Layouts";
+}
+
+void CLayouts::GetDescription(std::string& strDescription)
+{
+    strDescription = "Layouts of window controls";
+}
+
 LAYOUTS_API int nLayoutsVersion = 0.2;
 
 LAYOUTS_API int LayoutsVersion(void)
