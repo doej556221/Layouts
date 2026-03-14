@@ -45,14 +45,14 @@ namespace Layouts
 		return false;
 	}
 
-	void CLayoutItem::Lay(const CRectangle& Rectangle)
+	void CLayoutItem::Lay(const CLayoutRectangle& Rectangle)
 	{
 
 	}
 
-	CSize CLayoutItem::GetMinimal()
+	CLayoutSize CLayoutItem::GetMinimal()
 	{
-		CSize Size(0, 0);
+		CLayoutSize Size(0, 0);
 		return Size;
 	}
 

@@ -16,9 +16,9 @@
 
 namespace Layouts
 {
-	class CSize;
-	class CRectangle;
-	class CMargins;
+	class CLayoutSize;
+	class CLayoutRectangle;
+	class CLayoutMargins;
 
 	/**
 	* \class CLayoutItem
@@ -75,7 +75,7 @@ namespace Layouts
 		* \~russian @brief Расположить содержимое размещения
 		* \~russian @param[in] Прямоугольная область размещения
 		*/
-		virtual void Lay(const CRectangle& Rectangle);
+		virtual void Lay(const CLayoutRectangle& Rectangle);
 
 		/**
 		* \~english @brief Get minimal size of layout area 
@@ -83,7 +83,7 @@ namespace Layouts
 		* \~russian @brief Получить минимальный размер области размещения
 		* \~russian @return Размер области
 		*/
-		virtual CSize GetMinimal();
+		virtual CLayoutSize GetMinimal();
 
 		/**
 		* \~english @brief Get spacing

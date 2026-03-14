@@ -33,6 +33,7 @@
 class LAYOUTS_API CLayouts {
 public:
 	CLayouts(void);
+	int GetVersion();
 };
 
 extern LAYOUTS_API int nLayoutsVersion;

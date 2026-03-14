@@ -18,10 +18,10 @@
 
 namespace Layouts
 {
-	class CMargins;
+	class CLayoutMargins;
 
 	/**
-	* \class CSize
+	* \class CLayoutSize
 	* \~english @brief Size
 	* \~english @details
 	* Size used to place layouts contents
@@ -29,7 +29,7 @@ namespace Layouts
 	* \~russian @details
 	* Размер, который используется для расположения содержимого размещений
 	*/
-	class LAYOUTS_API CSize
+	class LAYOUTS_API CLayoutSize
 	{
 		/**
 		* \~english @brief Width
@@ -49,7 +49,7 @@ namespace Layouts
 		* \~english @brief Default constructor
 		* \~russian @brief Конструктор класса по-умолчанию
 		*/
-		CSize();
+		CLayoutSize();
 		
 		/** 
 		* \~english @brief Copy constructor
@@ -57,7 +57,7 @@ namespace Layouts
 		* \~russian @brief Конструктор копирования
 		* \~russian @param[in] Size Другой экземляр класса
 		*/
-		CSize(const CSize& Size);
+		CLayoutSize(const CLayoutSize& Size);
 
 		/** 
 		* \~english @brief Constructor by width and height
@@ -67,7 +67,7 @@ namespace Layouts
 		* \~russian @param[in] iWidth Размер по ширине
 		* \~russian @param[in] iHeight Размер по высоте
 		*/
-		CSize(int iWidth, int iHeight);
+		CLayoutSize(int iWidth, int iHeight);
 
 		/** 
 		* \~english @brief Get width
@@ -107,7 +107,7 @@ namespace Layouts
 		* \~russian @brief Установить размер по другому размеру
 		* \~russian @param[in] Size
 		*/
-		void SetSize(const CSize& Size);
+		void SetSize(const CLayoutSize& Size);
 
 		/** 
 		* \~english @brief Set size
@@ -125,7 +125,7 @@ namespace Layouts
 		* \~russian @brief Добавить отступы к размеру
 		* \~russian @param[in] Marings
 		*/
-		void AddMargins(const CMargins& Margins);
+		void AddMargins(const CLayoutMargins& Margins);
 
 		/**
 		* \~english @brief Add margins
@@ -142,7 +142,7 @@ namespace Layouts
 		* \~russian @brief Вычесть отступы из размера
 		* \~russian @param[in] Margins
 		*/
-		void RemoveMargins(const CMargins& Margins);
+		void RemoveMargins(const CLayoutMargins& Margins);
 
 		/**
 		* \~english @brief Remove margins

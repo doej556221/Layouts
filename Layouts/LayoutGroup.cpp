@@ -108,12 +108,12 @@ namespace Layouts
 		return bGeneralVisibility;
 	}
 
-	void CLayoutGroup::Lay(const CRectangle& Rectangle)
+	void CLayoutGroup::Lay(const CLayoutRectangle& Rectangle)
 	{
 		if (m_arrItems.empty() == true)
 			return;
 		
-		CRectangle rectLayout(Rectangle);
+		CLayoutRectangle rectLayout(Rectangle);
 
 		struct CCalculation
 		{
@@ -143,7 +143,7 @@ namespace Layouts
 				if (pItem->IsVisible() == false)
 					continue;
 
-				CSize sizeMinimal = pItem->GetMinimal();
+				CLayoutSize sizeMinimal = pItem->GetMinimal();
 
 				if (pItem->HorizontalPolicy() == Fixed)
 				{
@@ -187,9 +187,9 @@ namespace Layouts
 				if (pItem->IsVisible() == false)
 					continue;
 
-				CSize sizeMinimal = pItem->GetMinimal();
+				CLayoutSize sizeMinimal = pItem->GetMinimal();
 
-				CRectangle rectItem;
+				CLayoutRectangle rectItem;
 				rectItem.SetRectangle(iPosition, rectLayout.Top(), iPosition + sizeMinimal.Width(), rectLayout.Bottom());
 
 				if (pItem->HorizontalPolicy() == Stretched)
@@ -211,7 +211,7 @@ namespace Layouts
 				if (pItem->IsVisible() == false)
 					continue;
 
-				CSize sizeMinimal = pItem->GetMinimal();
+				CLayoutSize sizeMinimal = pItem->GetMinimal();
 
 				if (pItem->HorizontalPolicy() == Fixed)
 				{
@@ -260,9 +260,9 @@ namespace Layouts
 				if (pItem->IsVisible() == false)
 					continue;
 
-				CSize sizeMinimal = pItem->GetMinimal();
+				CLayoutSize sizeMinimal = pItem->GetMinimal();
 
-				CRectangle rectItem;
+				CLayoutRectangle rectItem;
 				rectItem.SetRectangle(rectLayout.Left(), iPosition, rectLayout.Right(), iPosition + sizeMinimal.Height());
 
 				if (pItem->VerticalPolicy() == Stretched)
@@ -276,15 +276,15 @@ namespace Layouts
 
 	}
 
-	CSize CLayoutGroup::GetMinimal()
+	CLayoutSize CLayoutGroup::GetMinimal()
 	{
-		CSize sizeMinimal;
+		CLayoutSize sizeMinimal;
 
 		for (auto pItem : m_arrItems)
 		{
 			if (m_eOrientation == Horizontal)
 			{
-				CSize sizeItem = pItem->GetMinimal();
+				CLayoutSize sizeItem = pItem->GetMinimal();
 				sizeMinimal.SetWidth(sizeMinimal.Width() + sizeItem.Width());
 				
 				if (sizeMinimal.Height() < sizeItem.Height())
@@ -292,7 +292,7 @@ namespace Layouts
 			}
 			else if (m_eOrientation == Vertical)
 			{
-				CSize sizeItem = pItem->GetMinimal();
+				CLayoutSize sizeItem = pItem->GetMinimal();
 				sizeMinimal.SetHeight(sizeMinimal.Height() + sizeItem.Height());
 
 				if (sizeMinimal.Width() < sizeItem.Width())

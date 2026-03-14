@@ -13,6 +13,16 @@
 #include "framework.h"
 #include "Layouts.h"
 
+CLayouts::CLayouts()
+{
+
+}
+
+int CLayouts::GetVersion()
+{
+    return nLayoutsVersion;
+}
+
 LAYOUTS_API int nLayoutsVersion = 0.2;
 
 LAYOUTS_API int LayoutsVersion(void)

@@ -7,8 +7,8 @@
 
 namespace Layouts
 {
-	class CRectangle;
-	class CMargins;
+	class CLayoutRectangle;
+	class CLayoutMargins;
 
 	class CControlAdapter : public CLayoutControl
 	{
@@ -20,14 +20,14 @@ namespace Layouts
 		bool IsVisible() override;
 
 		void Lay();
-		void Lay(const CRectangle& Rectangle) override;
-		CSize GetMinimal() override;
+		void Lay(const CLayoutRectangle& Rectangle) override;
+		CLayoutSize GetMinimal() override;
 
 		void Hook();
 
 	protected:
 		CWnd* m_pWnd;
-		Layouts::CSize m_FixedSize;
+		Layouts::CLayoutSize m_FixedSize;
 
 		WNDPROC m_pOriginalProcedure;
 		static LRESULT CALLBACK HookProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);

@@ -20,12 +20,12 @@
 
 namespace Layouts
 {
-	class CPoint;
-	class CSize;
-	class CMargins;
+	class CLayoutPoint;
+	class CLayoutSize;
+	class CLayoutMargins;
 
 	/**
-	* \class CRectangle
+	* \class CLayoutRectangle
 	* \~english @brief Rectangle
 	* \~english @details
 	* Rectangle used to place layouts contents
@@ -33,7 +33,7 @@ namespace Layouts
 	* \~russian @details
 	* Прямоугольник, который используется для расположения содержимого размещений
 	*/
-	class LAYOUTS_API CRectangle
+	class LAYOUTS_API CLayoutRectangle
 	{
 		/** 
 		* \~english @brief Left of rectangle
@@ -65,7 +65,7 @@ namespace Layouts
 		* \~english @brief Default constructor
 		* \~russian @brief Конструктор по-умолчанию
 		*/
-		CRectangle();
+		CLayoutRectangle();
 
 		/**
 		* \~english @brief Copy constructor
@@ -73,7 +73,7 @@ namespace Layouts
 		* \~russian @brief Конструктор копирования
 		* \~russian @param[in] Rectangle Другой экземпляр класса
 		*/
-		CRectangle(const CRectangle& Rectangle);
+		CLayoutRectangle(const CLayoutRectangle& Rectangle);
 
 		/**
 		* \~english @brief Constructor by boundaries
@@ -87,7 +87,7 @@ namespace Layouts
 		* \~russian @param[in] iRight Положение рамки справа
 		* \~russian @param[in] iBottom Положение рамки снизу
 		*/
-		CRectangle(int iLeft, int iTop, int iRight, int iBottom);
+		CLayoutRectangle(int iLeft, int iTop, int iRight, int iBottom);
 		
 		/**
 		* \~english @brief Constructor by position and size
@@ -97,7 +97,7 @@ namespace Layouts
 		* \~russian @param[in] Point Положение рамки сверху слева
 		* \~russian @param[in] Size Размер рамки
 		*/
-		CRectangle(const CPoint& Point, const CSize& Size);
+		CLayoutRectangle(const CLayoutPoint& Point, const CLayoutSize& Size);
 
 		/**
 		* \~english @brief Get left of rectangle
@@ -185,7 +185,7 @@ namespace Layouts
 		* \~russian @brief Получить положение прямоугольника
 		* \~russian @return Положение прямоугольника сверху слева
 		*/
-		CPoint Point() const;
+		CLayoutPoint Point() const;
 
 		/**
 		* \~english @brief Set rectangle position
@@ -203,7 +203,7 @@ namespace Layouts
 		* \~russian @brief Установить положение прямоугольника
 		* \~russian @param[in] Point Положение прямоугольника сверху слева
 		*/
-		void SetPoint(const CPoint& Point);
+		void SetPoint(const CLayoutPoint& Point);
 
 		/**
 		* \~english @brief Get rectangle position
@@ -211,7 +211,7 @@ namespace Layouts
 		* \~russian @brief Получить размер прямоугольника
 		* \~russian @return Размер прямоугольника
 		*/
-		CSize Size() const;
+		CLayoutSize Size() const;
 
 		/**
 		* \~english @brief Set rectangle size
@@ -229,7 +229,7 @@ namespace Layouts
 		* \~russian @brief Установить размер прямоугольника
 		* \~russian @param[in] iSize Размер прямоугольника
 		*/
-		void SetSize(const CSize& Size);
+		void SetSize(const CLayoutSize& Size);
 
 		/**
 		* \~english @brief Set rectangle width
@@ -253,7 +253,7 @@ namespace Layouts
 		* \~russian @brief Установить прямоугольник
 		* \~russian @param[in] Rectangle Другой прямоугольник
 		*/
-		void SetRectangle(const CRectangle& Rectangle);
+		void SetRectangle(const CLayoutRectangle& Rectangle);
 		
 		/**
 		* \~english @brief Set rectangle
@@ -263,7 +263,7 @@ namespace Layouts
 		* \~russian @param[in] Point Положение прямоугольника сверху слева
 		* \~russian @param[in] Size Размер прямоугольника
 		*/
-		void SetRectangle(const CPoint& Point, const CSize& Size);
+		void SetRectangle(const CLayoutPoint& Point, const CLayoutSize& Size);
 
 		/**
 		* \~english @brief Set rectangle
@@ -285,7 +285,7 @@ namespace Layouts
 		* \~russian @brief Добавить отступы к прямоугольнику
 		* \~russian @param[in] Margins Коллекция значений для добавления к прямоугольнику
 		*/
-		void AddMargins(const CMargins& Margins);
+		void AddMargins(const CLayoutMargins& Margins);
 
 		/**
 		* \~english @brief Add margins to rectangle
@@ -301,7 +301,7 @@ namespace Layouts
 		* \~russian @brief Вычесть отступы из прямоугольника
 		* \~russian @param[in] Margins Коллекция значений для отступов из прямоугольника
 		*/
-		void RemoveMargins(const CMargins& Margins);
+		void RemoveMargins(const CLayoutMargins& Margins);
 	
 		/**
 		* \~english @brief Remove margins from rectangle

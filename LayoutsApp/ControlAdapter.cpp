@@ -70,10 +70,10 @@ namespace Layouts
 		if (::IsWindow(m_pWnd->GetSafeHwnd()) == TRUE)
 			m_pWnd->GetClientRect(&rectClient);
 
-		CRectangle Rectangle(rectClient.left, rectClient.top, rectClient.right, rectClient.bottom);
+		CLayoutRectangle Rectangle(rectClient.left, rectClient.top, rectClient.right, rectClient.bottom);
 		Rectangle.RemoveMargins(m_Margins);
 
-		CRectangle rectItem(Rectangle);
+		CLayoutRectangle rectItem(Rectangle);
 		if (m_pLayoutItem != nullptr)
 		{
 			rectItem.RemoveMargins(m_Margins);
@@ -84,7 +84,7 @@ namespace Layouts
 			m_pWnd->RedrawWindow();
 	}
 
-	void CControlAdapter::Lay(const CRectangle& Rectangle)
+	void CControlAdapter::Lay(const CLayoutRectangle& Rectangle)
 	{
 		CRect rectControl(Rectangle.Left(), Rectangle.Top(), Rectangle.Right(), Rectangle.Bottom());
 
@@ -99,7 +99,7 @@ namespace Layouts
 
 		if (m_pOriginalProcedure == 0)
 		{
-			CRectangle rectItem(Rectangle);
+			CLayoutRectangle rectItem(Rectangle);
 			if (m_pLayoutItem != nullptr)
 			{
 				rectItem.RemoveMargins(m_Margins);
@@ -108,10 +108,10 @@ namespace Layouts
 		}
 	}
 
-	CSize CControlAdapter::GetMinimal()
+	CLayoutSize CControlAdapter::GetMinimal()
 	{
-		CSize sizeControl = m_FixedSize;
-		CSize sizeMinimal = CLayoutControl::GetMinimal();	
+		CLayoutSize sizeControl = m_FixedSize;
+		CLayoutSize sizeMinimal = CLayoutControl::GetMinimal();	
 		
 		if (m_FixedSize.Width() < sizeMinimal.Width())
 			sizeControl.SetWidth(sizeMinimal.Width());

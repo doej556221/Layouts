@@ -20,7 +20,7 @@
 namespace Layouts
 {
 	/**
-	* \class CMargins
+	* \class CLayoutMargins
 	* \~english @brief Margins
 	* \~english @details
 	* Margins used to place layouts contents
@@ -28,7 +28,7 @@ namespace Layouts
 	* \~russian @details
 	* Отступы, которые используются для расположения содержимого размещений
 	*/
-	class LAYOUTS_API CMargins
+	class LAYOUTS_API CLayoutMargins
 	{
 		/**
 		* \~english @brief Left margin
@@ -61,7 +61,7 @@ namespace Layouts
 		* \~english @brief Default constructor
 		* \~russian @brief Конструктор по-умолчанию
 		*/
-		CMargins();
+		CLayoutMargins();
 
 		/**
 		* \~english @brief Copy constructor
@@ -69,7 +69,7 @@ namespace Layouts
 		* \~russian @brief Конструктор копирования
 		* \~russian @param[in] Margins Другой экземпляр класса
 		*/
-		CMargins(const CMargins& Margins);
+		CLayoutMargins(const CLayoutMargins& Margins);
 
 		/**
 		* \~english @brief Constructor by margin values
@@ -83,7 +83,7 @@ namespace Layouts
 		* \~russian @param[in] iRight Отступ справа
 		* \~russian @param[in] iBottom Отступ снизу
 		*/
-		CMargins(int iTop, int iLeft, int iBottom, int iRight);
+		CLayoutMargins(int iTop, int iLeft, int iBottom, int iRight);
 
 		/**
 		* \~english @brief Сonstructor by margin value
@@ -91,7 +91,7 @@ namespace Layouts
 		* \~russian @brief Конструктор по значению отступа
 		* \~russian @param[in] iMargin Значение отступа
 		*/
-		CMargins(int iMargin);
+		CLayoutMargins(int iMargin);
 
 		/**
 		* \~english @brief Get left margin value
@@ -163,7 +163,7 @@ namespace Layouts
 		* \~russian @brief Установить отступы
 		* \~russian @param[in] Margins Коллекция значений отступов
 		*/
-		void SetMargins(const CMargins& Margins);
+		void SetMargins(const CLayoutMargins& Margins);
 
 		/**
 		* \~english @brief Set margins

@@ -1,2 +1,2 @@
-Layouts is the main project folder
+Layouts is a folder for the project files
 LayoutsApp is a folder for demonstration application

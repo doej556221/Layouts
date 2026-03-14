@@ -18,75 +18,75 @@
 namespace Layouts
 {
 
-    CSize::CSize()
+    CLayoutSize::CLayoutSize()
     {
         this->m_iWidth = 0;
         this->m_iHeight = 0;
     }
 
-    CSize::CSize(const CSize& Size)
+    CLayoutSize::CLayoutSize(const CLayoutSize& Size)
     {
         m_iWidth = Size.m_iWidth;
         m_iHeight = Size.m_iHeight;
     }
 
-    CSize::CSize(int Width, int Height)
+    CLayoutSize::CLayoutSize(int Width, int Height)
     {
         this->m_iWidth = Width;
         this->m_iHeight = Height;
     }
 
-    int CSize::Width() const
+    int CLayoutSize::Width() const
     {
         return m_iWidth;
     }
 
-    int CSize::Height() const
+    int CLayoutSize::Height() const
     {
         return m_iHeight;
     }
 
-    void CSize::SetWidth(int iWidth)
+    void CLayoutSize::SetWidth(int iWidth)
     {
         m_iWidth = iWidth;
     }
 
-    void CSize::SetHeight(int iHeight)
+    void CLayoutSize::SetHeight(int iHeight)
     {
         m_iHeight = iHeight;
     }
 
-    void CSize::SetSize(const CSize& Size)
+    void CLayoutSize::SetSize(const CLayoutSize& Size)
     {
         m_iWidth = Size.m_iWidth;
         m_iHeight = Size.m_iHeight;
     }
 
-    void CSize::SetSize(int iWidth, int iHeight)
+    void CLayoutSize::SetSize(int iWidth, int iHeight)
     {
         m_iWidth = iWidth;
         m_iHeight = iHeight;
     }
 
-    void CSize::AddMargins(const CMargins& Margins)
+    void CLayoutSize::AddMargins(const CLayoutMargins& Margins)
     {
         m_iWidth = m_iWidth + Margins.Left() + Margins.Right();
         m_iHeight = m_iHeight + Margins.Top() + Margins.Bottom();
     }
 
-    void CSize::AddMargins(int iMargin)
+    void CLayoutSize::AddMargins(int iMargin)
     {
         m_iWidth = m_iWidth + iMargin + iMargin;
         m_iHeight = m_iHeight + iMargin + iMargin;
     }
 
-    void CSize::RemoveMargins(const CMargins& Margins)
+    void CLayoutSize::RemoveMargins(const CLayoutMargins& Margins)
     {
         m_iWidth = m_iWidth - Margins.Left() - Margins.Right();
         m_iHeight = m_iHeight - Margins.Top() - Margins.Bottom();
     }
 
-    void CSize::RemoveMargins(int iMargin)
+    void CLayoutSize::RemoveMargins(int iMargin)
     {
         m_iWidth = m_iWidth - iMargin - iMargin;
         m_iHeight = m_iHeight - iMargin - iMargin;

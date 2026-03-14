@@ -20,9 +20,9 @@
 
 namespace Layouts
 {
-	class CSize;
-	class CRectangle;
-	class CMargins;
+	class CLayoutSize;
+	class CLayoutRectangle;
+	class CLayoutMargins;
 	class CLayoutControl;
 
 	/**
@@ -112,7 +112,7 @@ namespace Layouts
 		* \~russian @brief Расположить содержимое размещения
 		* \~russian @param[in] Прямоугольная область размещения
 		*/
-		void Lay(const CRectangle& Rectangle) override;
+		void Lay(const CLayoutRectangle& Rectangle) override;
 
 		/**
 		* \~english @brief Get minimal size of layout area
@@ -120,7 +120,7 @@ namespace Layouts
 		* \~russian @brief Получить минимальный размер области размещения
 		* \~russian @return Размер области
 		*/
-		CSize GetMinimal() override;
+		CLayoutSize GetMinimal() override;
 
 		/**
 		* \~english @brief Set layout orientation

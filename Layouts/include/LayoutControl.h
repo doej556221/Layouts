@@ -96,7 +96,7 @@ namespace Layouts
 		* \~russian @brief Расположить содержимое размещения
 		* \~russian @param[in] Прямоугольная область размещения
 		*/
-		void Lay(const CRectangle& Rectangle) override;
+		void Lay(const CLayoutRectangle& Rectangle) override;
 		
 		/**
 		* \~english @brief Get minimal size of layout area
@@ -104,7 +104,7 @@ namespace Layouts
 		* \~russian @brief Получить минимальный размер области размещения
 		* \~russian @return Размер области
 		*/
-		CSize GetMinimal() override;
+		CLayoutSize GetMinimal() override;
 		
 		/**
 		* \~english @brief Get inner layout
@@ -128,7 +128,7 @@ namespace Layouts
 		* \~russian @brief Получить отсупы для контрола
 		* \~russian @return Значения отступов
 		*/
-		CMargins GetMargins() const;
+		CLayoutMargins GetMargins() const;
 
 		/**
 		* \~english @brief Set control margins
@@ -158,7 +158,7 @@ namespace Layouts
 		* \~russian @brief Установить отступы для контрола
 		* \~russian @param[in] Margins Значения отступов
 		*/
-		void SetMargins(const CMargins& Margins);
+		void SetMargins(const CLayoutMargins& Margins);
 
 		/**
 		* \~english @brief Set default control margins
@@ -188,7 +188,7 @@ namespace Layouts
 		* \~russian @brief Установить отступы для контрола по-умолчанию
 		* \~russian @param[in] Margins Значения отступов
 		*/
-		static void SetDefaultMargins(const CMargins& Margins);
+		static void SetDefaultMargins(const CLayoutMargins& Margins);
 
 	protected:
 
@@ -196,13 +196,13 @@ namespace Layouts
 		* \~english @brief Default control margins
 		* \~russian @brief Отступы для контрола по-умолчанию
 		*/
-		static CMargins m_DefaultMargins;
+		static CLayoutMargins m_DefaultMargins;
 		
 		/**
 		* \~english @brief Default control margins
 		* \~russian @brief Отступы для контрола по-умолчанию
 		*/
-		CMargins m_Margins;
+		CLayoutMargins m_Margins;
 
 		/**
 		* \~english @brief Horizontal policy

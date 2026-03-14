@@ -21,7 +21,7 @@
 namespace Layouts
 {
 
-	CRectangle::CRectangle()
+	CLayoutRectangle::CLayoutRectangle()
 	{
 		m_iLeft = 0;
 		m_iTop = 0;
@@ -29,7 +29,7 @@ namespace Layouts
 		m_iBottom = 0;
 	}
 
-	CRectangle::CRectangle(const CRectangle& Rectangle)
+	CLayoutRectangle::CLayoutRectangle(const CLayoutRectangle& Rectangle)
 	{
 		m_iLeft = Rectangle.m_iLeft;
 		m_iTop = Rectangle.m_iTop;
@@ -37,7 +37,7 @@ namespace Layouts
 		m_iBottom = Rectangle.m_iBottom;
 	}
 
-	CRectangle::CRectangle(int iLeft, int iTop, int iRight, int iBottom)
+	CLayoutRectangle::CLayoutRectangle(int iLeft, int iTop, int iRight, int iBottom)
 	{
 		m_iLeft = iLeft;
 		m_iTop = iTop;
@@ -45,7 +45,7 @@ namespace Layouts
 		m_iBottom = iBottom;
 	}
 
-	CRectangle::CRectangle(const CPoint& Point, const CSize& Size)
+	CLayoutRectangle::CLayoutRectangle(const CLayoutPoint& Point, const CLayoutSize& Size)
 	{
 		m_iLeft = Point.Left();
 		m_iTop = Point.Top();
@@ -53,103 +53,103 @@ namespace Layouts
 		m_iBottom = m_iTop + Size.Height();
 	}
 
-	int CRectangle::Left() const
+	int CLayoutRectangle::Left() const
 	{
 		return m_iLeft;
 	}
 
-	int CRectangle::Top() const
+	int CLayoutRectangle::Top() const
 	{
 		return m_iTop;
 	}
 
-	int CRectangle::Bottom() const
+	int CLayoutRectangle::Bottom() const
 	{
 		return m_iBottom;
 	}
 
-	int CRectangle::Right() const
+	int CLayoutRectangle::Right() const
 	{
 		return m_iRight;
 	}
 
-	int CRectangle::Width() const
+	int CLayoutRectangle::Width() const
 	{
 		return m_iRight - m_iLeft;
 	}
 
-	int CRectangle::Height() const
+	int CLayoutRectangle::Height() const
 	{
 		return m_iBottom - m_iTop;
 	}
 
-	void CRectangle::SetLeft(int iLeft)
+	void CLayoutRectangle::SetLeft(int iLeft)
 	{
 		m_iLeft = iLeft;
 	}
 
-	void CRectangle::SetTop(int iTop)
+	void CLayoutRectangle::SetTop(int iTop)
 	{
 		m_iTop = iTop;
 	}
 
-	void CRectangle::SetBottom(int iBottom)
+	void CLayoutRectangle::SetBottom(int iBottom)
 	{
 		m_iBottom = iBottom;
 	}
 
-	void CRectangle::SetRight(int iRight)
+	void CLayoutRectangle::SetRight(int iRight)
 	{
 		m_iRight = iRight;
 	}
 
-	CPoint CRectangle::Point() const
+	CLayoutPoint CLayoutRectangle::Point() const
 	{
-		CPoint Point(m_iLeft, m_iTop);
+		CLayoutPoint Point(m_iLeft, m_iTop);
 		return Point;
 	}
 
-	void CRectangle::SetPoint(int iLeft, int iTop)
+	void CLayoutRectangle::SetPoint(int iLeft, int iTop)
 	{
 		m_iLeft = iLeft;
 		m_iTop = iTop;
 	}
 
-	void CRectangle::SetPoint(const CPoint& Point)
+	void CLayoutRectangle::SetPoint(const CLayoutPoint& Point)
 	{
 		m_iLeft = Point.Left();
 		m_iTop = Point.Top();
 	}
 
-	CSize CRectangle::Size() const
+	CLayoutSize CLayoutRectangle::Size() const
 	{
-		CSize Size(this->Width(), this->Height());
+		CLayoutSize Size(this->Width(), this->Height());
 		return Size;
 	}
 
-	void CRectangle::SetSize(int iWidth, int iHeight)
+	void CLayoutRectangle::SetSize(int iWidth, int iHeight)
 	{
 		m_iRight = m_iLeft + iWidth;
 		m_iBottom = m_iTop + iHeight;
 	}
 
-	void CRectangle::SetSize(const CSize& Size)
+	void CLayoutRectangle::SetSize(const CLayoutSize& Size)
 	{
 		m_iRight = m_iLeft + Size.Width();
 		m_iBottom = m_iTop + Size.Height();
 	}
 
-	void CRectangle::SetWidth(int iWidth)
+	void CLayoutRectangle::SetWidth(int iWidth)
 	{
 		m_iRight = m_iLeft + iWidth;
 	}
 
-	void CRectangle::SetHeight(int iHeight)
+	void CLayoutRectangle::SetHeight(int iHeight)
 	{
 		m_iBottom = m_iTop + iHeight;
 	}
 
-	void CRectangle::SetRectangle(const CRectangle& Rectangle)
+	void CLayoutRectangle::SetRectangle(const CLayoutRectangle& Rectangle)
 	{
 		m_iLeft = Rectangle.m_iLeft;
 		m_iTop = Rectangle.m_iTop;
@@ -157,7 +157,7 @@ namespace Layouts
 		m_iBottom = Rectangle.m_iBottom;
 	}
 
-	void CRectangle::SetRectangle(const CPoint& Point, const CSize& Size)
+	void CLayoutRectangle::SetRectangle(const CLayoutPoint& Point, const CLayoutSize& Size)
 	{
 		m_iLeft = Point.Left();
 		m_iTop = Point.Top();
@@ -165,7 +165,7 @@ namespace Layouts
 		m_iBottom = m_iTop + Size.Width();
 	}
 
-	void CRectangle::SetRectangle(int iLeft, int iTop, int iRight, int iBottom)
+	void CLayoutRectangle::SetRectangle(int iLeft, int iTop, int iRight, int iBottom)
 	{
 		m_iLeft = iLeft;
 		m_iTop = iTop;
@@ -173,7 +173,7 @@ namespace Layouts
 		m_iBottom = iBottom;
 	}
 
-	void CRectangle::AddMargins(const CMargins& Margins)
+	void CLayoutRectangle::AddMargins(const CLayoutMargins& Margins)
 	{
 		m_iLeft = m_iLeft - Margins.Left();
 		m_iTop = m_iTop - Margins.Top();
@@ -181,7 +181,7 @@ namespace Layouts
 		m_iBottom = m_iBottom + Margins.Bottom();
 	}
 
-	void CRectangle::AddMargins(int iMargins)
+	void CLayoutRectangle::AddMargins(int iMargins)
 	{
 		m_iLeft = m_iLeft - iMargins;
 		m_iTop = m_iTop - iMargins;
@@ -189,7 +189,7 @@ namespace Layouts
 		m_iBottom = m_iBottom + iMargins;
 	}
 
-	void CRectangle::RemoveMargins(const CMargins& Margins)
+	void CLayoutRectangle::RemoveMargins(const CLayoutMargins& Margins)
 	{
 		m_iLeft = m_iLeft + Margins.Left();
 		m_iTop = m_iTop + Margins.Top();
@@ -197,7 +197,7 @@ namespace Layouts
 		m_iBottom = m_iBottom - Margins.Bottom();
 	}
 
-	void CRectangle::RemoveMargins(int iMargins)
+	void CLayoutRectangle::RemoveMargins(int iMargins)
 	{
 		m_iLeft = m_iLeft + iMargins;
 		m_iTop = m_iTop + iMargins;

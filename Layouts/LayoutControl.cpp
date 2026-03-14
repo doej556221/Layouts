@@ -20,7 +20,7 @@
 
 namespace Layouts
 {
-	CMargins CLayoutControl::m_DefaultMargins(0, 0, 0, 0);
+	CLayoutMargins CLayoutControl::m_DefaultMargins(0, 0, 0, 0);
 
 	CLayoutControl::CLayoutControl()
 	{
@@ -69,9 +69,9 @@ namespace Layouts
 		return false;
 	}
 
-	void CLayoutControl::Lay(const CRectangle& Rectangle)
+	void CLayoutControl::Lay(const CLayoutRectangle& Rectangle)
 	{
-		CRectangle rectItem(Rectangle);
+		CLayoutRectangle rectItem(Rectangle);
 		if (m_pLayoutItem != nullptr)
 		{
 			rectItem.RemoveMargins(m_Margins);
@@ -79,9 +79,9 @@ namespace Layouts
 		}
 	}
 
-	CSize CLayoutControl::GetMinimal()
+	CLayoutSize CLayoutControl::GetMinimal()
 	{
-		CSize sizeLayout;
+		CLayoutSize sizeLayout;
 		if (m_pLayoutItem != nullptr)
 		{
 			sizeLayout = m_pLayoutItem->GetMinimal();
@@ -101,7 +101,7 @@ namespace Layouts
 		m_pLayoutItem = pLayoutItem;
 	}
 
-	CMargins CLayoutControl::GetMargins() const
+	CLayoutMargins CLayoutControl::GetMargins() const
 	{
 		return m_Margins;
 	}
@@ -116,7 +116,7 @@ namespace Layouts
 		m_Margins.SetMargins(iLeft, iTop, iRight, iBottom);
 	}
 
-	void CLayoutControl::SetMargins(const CMargins& Margins)
+	void CLayoutControl::SetMargins(const CLayoutMargins& Margins)
 	{
 		m_Margins.SetMargins(Margins);
 	}
@@ -131,7 +131,7 @@ namespace Layouts
 		m_DefaultMargins.SetMargins(iLeft, iTop, iRight, iBottom);
 	}
 
-	void CLayoutControl::SetDefaultMargins(const CMargins& Margins)
+	void CLayoutControl::SetDefaultMargins(const CLayoutMargins& Margins)
 	{
 		m_DefaultMargins.SetMargins(Margins);
 	}

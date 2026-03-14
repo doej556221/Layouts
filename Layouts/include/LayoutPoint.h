@@ -20,7 +20,7 @@
 namespace Layouts
 {
 	/**
-	* \class CPoint
+	* \class CLayoutPoint
 	* \~english @brief Point
 	* \~english @details
 	* Point used to place layouts contents
@@ -28,7 +28,7 @@ namespace Layouts
 	* \~russian @details
 	* Точка, которая используется для расположения содержимого размещений
 	*/
-	class LAYOUTS_API CPoint
+	class LAYOUTS_API CLayoutPoint
 	{
 		/**
 		* \~english @brief Top of point
@@ -48,7 +48,7 @@ namespace Layouts
 		* \~english @brief Default constructor
 		* \~russian @brief Конструктор по-умолчанию
 		*/
-		CPoint();
+		CLayoutPoint();
 
 		/**
 		* \~english @brief Copy constructor
@@ -56,7 +56,7 @@ namespace Layouts
 		* \~russian @brief Конструктор копирования
 		* \~russian @param[in] Rectangle Другой экземпляр класса
 		*/
-		CPoint(const CPoint& Point);
+		CLayoutPoint(const CLayoutPoint& Point);
 
 		/**
 		* \~english @brief Constructor by left and top positions
@@ -66,7 +66,7 @@ namespace Layouts
 		* \~russian @param[in] iLeft Положение точки слева
 		* \~russian @param[in] iTop Положение точки сверху
 		*/
-		CPoint(int iLeft, int iTop);
+		CLayoutPoint(int iLeft, int iTop);
 
 		/**
 		* \~english @brief Get left of point
@@ -107,7 +107,7 @@ namespace Layouts
 		* \~russian @brief Установить положение точки
 		* \~russian @param[in] Point Другая точка
 		*/
-		void SetPoint(const CPoint& Point);
+		void SetPoint(const CLayoutPoint& Point);
 		
 		/**
 		* \~english @brief Set point

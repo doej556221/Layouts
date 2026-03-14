@@ -17,51 +17,51 @@
 
 namespace Layouts
 {
-	CPoint::CPoint()
+	CLayoutPoint::CLayoutPoint()
 	{
 		m_iTop = 0;
 		m_iLeft = 0;
 	}
 
-	CPoint::CPoint(const CPoint& Point)
+	CLayoutPoint::CLayoutPoint(const CLayoutPoint& Point)
 	{
 		m_iLeft = Point.m_iLeft;
 		m_iTop = Point.m_iTop;
 	}
 
-	CPoint::CPoint(int iLeft, int iTop)
+	CLayoutPoint::CLayoutPoint(int iLeft, int iTop)
 	{
 		m_iLeft = iLeft;
 		m_iTop = iTop;
 	}
 
-	int CPoint::Top() const
+	int CLayoutPoint::Top() const
 	{
 		return m_iTop;
 	}
 
-	int CPoint::Left() const
+	int CLayoutPoint::Left() const
 	{
 		return m_iLeft;
 	}
 
-	void CPoint::SetLeft(int iLeft)
+	void CLayoutPoint::SetLeft(int iLeft)
 	{
 		m_iLeft = iLeft;
 	}
 
-	void CPoint::SetTop(int iTop)
+	void CLayoutPoint::SetTop(int iTop)
 	{
 		m_iTop = iTop;
 	}
 
-	void CPoint::SetPoint(const CPoint& Point)
+	void CLayoutPoint::SetPoint(const CLayoutPoint& Point)
 	{
 		m_iTop = Point.m_iTop;
 		m_iLeft = Point.m_iLeft;
 	}
 
-	void CPoint::SetPoint(int iLeft, int iTop)
+	void CLayoutPoint::SetPoint(int iLeft, int iTop)
 	{
 		m_iLeft = iLeft;
 		m_iTop = iTop;
