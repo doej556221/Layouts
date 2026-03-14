@@ -112,14 +112,14 @@ BOOL CLayoutsDlg::OnInitDialog()
 	// Name Fields
 
 	Layouts::CLayoutGroup* groupFirstName = new Layouts::CLayoutGroup(Layouts::Horizontal);
-	Layouts::CLabelAdapter* itemFirstNameLabel = new Layouts::CLabelAdapter(GetDlgItem(IDC_STATIC1), Layouts::Minimal, Layouts::Fixed);
+	Layouts::CControlAdapter* itemFirstNameLabel = new Layouts::CControlAdapter(GetDlgItem(IDC_STATIC1), Layouts::Fixed, Layouts::Fixed);
 	Layouts::CControlAdapter* itemFirstNameEdit = new Layouts::CControlAdapter(GetDlgItem(IDC_EDIT1), Layouts::Stretched, Layouts::Fixed);
 	groupFirstName->AddItem(itemFirstNameLabel);
 	groupFirstName->AddItem(itemFirstNameEdit);
 	groupForm->AddItem(groupFirstName);
 
 	Layouts::CLayoutGroup* groupLastName = new Layouts::CLayoutGroup(Layouts::Horizontal);
-	Layouts::CLabelAdapter* itemLastNameLabel = new Layouts::CLabelAdapter(GetDlgItem(IDC_STATIC2), Layouts::Minimal, Layouts::Fixed);
+	Layouts::CLabelAdapter* itemLastNameLabel = new Layouts::CLabelAdapter(GetDlgItem(IDC_STATIC2), Layouts::Fixed, Layouts::Fixed);
 	Layouts::CControlAdapter* itemLastNameEdit = new Layouts::CControlAdapter(GetDlgItem(IDC_EDIT2), Layouts::Stretched, Layouts::Fixed);
 	groupLastName->AddItem(itemLastNameLabel);
 	groupLastName->AddItem(itemLastNameEdit);
