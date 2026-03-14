@@ -130,7 +130,7 @@ namespace Layouts
 				m_iPortion = 0;
 			}
 		} 
-		calcFixed, calcPreferred, calcStretched;
+		calcMinimal, calcFixed, calcPreferred, calcStretched;
 
 		if (m_eOrientation == Horizontal)
 		{
@@ -145,10 +145,20 @@ namespace Layouts
 
 				CLayoutSize sizeMinimal = pItem->GetMinimal();
 
-				if (pItem->HorizontalPolicy() == Fixed)
+				if (pItem->HorizontalPolicy() == Minimal)
+				{
+					calcMinimal.m_iWidth += sizeMinimal.Width();
+					calcMinimal.m_iCount++;
+				}
+				else if (pItem->HorizontalPolicy() == Fixed)
 				{
 					calcFixed.m_iWidth += sizeMinimal.Width();
 					calcFixed.m_iCount++;
+				}
+				else if (pItem->HorizontalPolicy() == Preferred)
+				{
+					calcPreferred.m_iWidth += sizeMinimal.Width();
+					calcPreferred.m_iCount++;
 				}
 				else if (pItem->HorizontalPolicy() == Stretched)
 				{
@@ -156,25 +166,32 @@ namespace Layouts
 					calcStretched.m_iCount++;
 				}
 
-				if (pItem->VerticalPolicy() == Fixed)
+				if (pItem->VerticalPolicy() == Minimal)
 				{
-					if (calcFixed.m_iHeight < sizeMinimal.Width())
-						calcFixed.m_iHeight = sizeMinimal.Width();
+					if (calcMinimal.m_iHeight < sizeMinimal.Height())
+						calcMinimal.m_iHeight = sizeMinimal.Height();
+				}
+				else if (pItem->VerticalPolicy() == Fixed)
+				{
+					if (calcFixed.m_iHeight < sizeMinimal.Height())
+						calcFixed.m_iHeight = sizeMinimal.Height();
 				}
 				else if (pItem->VerticalPolicy() == Preferred)
 				{
-					if (calcPreferred.m_iHeight < sizeMinimal.Width())
-						calcPreferred.m_iHeight = sizeMinimal.Width();
+					if (calcPreferred.m_iHeight < sizeMinimal.Height())
+						calcPreferred.m_iHeight = sizeMinimal.Height();
 				}
 				else if (pItem->VerticalPolicy() == Stretched)
 				{
-					if (calcStretched.m_iHeight < sizeMinimal.Width())
-						calcStretched.m_iHeight = sizeMinimal.Width();
+					if (calcStretched.m_iHeight < sizeMinimal.Height())
+						calcStretched.m_iHeight = sizeMinimal.Height();
 				}
 			}
 
 			if (calcStretched.m_iCount > 0)
-				calcStretched.m_iPortion = (rectLayout.Width() - calcPreferred.m_iWidth - calcFixed.m_iWidth - m_iSpacing * (m_arrItems.size() - 1)) / calcStretched.m_iCount;
+				calcStretched.m_iPortion = (rectLayout.Width() - 
+					calcPreferred.m_iWidth - calcFixed.m_iWidth - calcMinimal.m_iWidth - 
+					m_iSpacing * (m_arrItems.size() - 1)) / calcStretched.m_iCount;
 
 			// if (calcPreferred.m_iCount > 0)
 			// calcPreferred.m_iPortion
@@ -247,7 +264,9 @@ namespace Layouts
 			}
 
 			if (calcStretched.m_iCount > 0)
-				calcStretched.m_iPortion = (rectLayout.Height() - calcFixed.m_iHeight - calcPreferred.m_iHeight - m_iSpacing * (m_arrItems.size() - 1)) / calcStretched.m_iCount;
+				calcStretched.m_iPortion = (rectLayout.Height() - 
+					calcFixed.m_iHeight - calcPreferred.m_iHeight - calcMinimal.m_iHeight - 
+					m_iSpacing * (m_arrItems.size() - 1)) / calcStretched.m_iCount;
 
 			// if (calcPreferred.m_iCount > 0)
 			// calcPreferred.m_iPortion

@@ -61,8 +61,8 @@ namespace Layouts
 	*/
 	enum LayoutPolicy
 	{
-		Fixed, ///< Фиксированный размер
 		Minimal, ///< Минимальный размер
+		Fixed, ///< Фиксированный размер
 		Preferred, ///< Предпочтительный
 		Stretched ///< Растянутый
 	};

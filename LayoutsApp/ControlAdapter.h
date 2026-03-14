@@ -1,9 +1,11 @@
 ﻿
-// Control.h: Defines MFC Control based on LayoutControl class
+// ControlAdapter.h: Defines MFC Control Adapter based on LayoutControl class
 //
 
-#include "LayoutControl.h"
+#pragma once
+#include "Layouts.h"
 #include "LayoutSize.h"
+#include "LayoutControl.h"
 
 namespace Layouts
 {

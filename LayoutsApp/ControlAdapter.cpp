@@ -1,5 +1,5 @@
 ﻿
-// Control.h: Defines MFC Control based on LayoutControl class
+// ControlAdapter.h: Implements MFC Control Adapter based on LayoutControl class
 //
 
 
