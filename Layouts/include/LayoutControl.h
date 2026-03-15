@@ -17,7 +17,6 @@
 #include "LayoutItem.h"
 #include "LayoutMargins.h"
 #include "LayoutRect.h"
-#include "LayoutItem.h"
 
 namespace Layouts
 {

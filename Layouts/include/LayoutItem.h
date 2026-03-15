@@ -13,13 +13,12 @@
 #define LAYOUTITEM_HEADER
 
 #include "Layouts.h"
+#include "LayoutMargins.h"
+#include "LayoutRect.h"
+#include "LayoutSize.h"
 
 namespace Layouts
 {
-	class CLayoutSize;
-	class CLayoutRectangle;
-	class CLayoutMargins;
-
 	/**
 	* \class CLayoutItem
 	* \~english @brief Base layout item

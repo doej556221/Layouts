@@ -15,16 +15,14 @@
 
 #include "Layouts.h"
 #include "LayoutItem.h"
+#include "LayoutMargins.h"
+#include "LayoutRect.h"
+#include "LayoutSize.h"
 
 #include <list>
 
 namespace Layouts
 {
-	class CLayoutSize;
-	class CLayoutRectangle;
-	class CLayoutMargins;
-	class CLayoutControl;
-
 	/**
 	* \class CLayoutGroup
 	* \~english @brief Group layout

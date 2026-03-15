@@ -14,9 +14,6 @@
 #include "LayoutControl.h"
 #include "LayoutPoint.h"
 #include "LayoutSize.h"
-#include "LayoutRect.h"
-#include "LayoutMargins.h"
-#include "LayoutItem.h"
 
 namespace Layouts
 {
